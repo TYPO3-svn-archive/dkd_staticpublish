@@ -1,0 +1,41 @@
+/**
+ *$Id$
+ */	
+
+Sorry! Didn't find the time to translate this document yet.
+
+
+Parameter für Benutzung des PI XMLMenu:
+	Allgemein:
+		- 'id': Seiten-ID einer Seite im Baum des auszulesenden Zweiges
+			Anm.: wird nicht überprüft; falls die Seiten-ID in einem anderen Baum liegt, können sich die TS-Einstellungen ändern!
+		- 'type': Seiten-Typ, der nur das XMLMenu ausgibt
+			Anm.: in der Extension ist der Seitentyp 216 vorkonfiguriert
+
+	PI-spezifisch (Parameter "tx_dkdstaticpublish_xmlmenu[<param>]":
+		- 'menuPid': ID der Seite, an der der auszulesende Zweig hängt
+			Parameter ist optional; Fallback: aktuelle Seiten-ID
+		- 'pageTypes': Seitentypen, die benutzt werden sollen
+			Parameter ist optional; Fallback: alle
+			Anm.:
+				der Seitentyp, der für die Ausgabe verwendet wird, wird generell ignoriert
+				'pageTypes' kann eine Komma-separierte Liste sein oder ein Array:
+					tx_dkdstaticpublish_xmlmenu[pageTypes]=0,99
+					tx_dkdstaticpublish_xmlmenu[pageTypes][]=0&tx_dkdstaticpublish_xmlmenu[pageTypes][]=99
+					tx_dkdstaticpublish_xmlmenu[pageTypes]=all (Sonderfall!)
+		- 'languages': Sprachen, die benutzt werden sollen
+			Parameter ist optional; Fallback: alle
+			Anm.:
+				es werden nur Links zu tatsächlich vorhandenen und aktivierten Übersetzungen erzeugt
+				'languages' kann eine Komma-separierte Liste sein oder ein Array:
+					tx_dkdstaticpublish_xmlmenu[languages]=0,1,4
+					tx_dkdstaticpublish_xmlmenu[languages][]=0&tx_dkdstaticpublish_xmlmenu[languages][]=3
+					tx_dkdstaticpublish_xmlmenu[pageTypes]=all (Sonderfall!)
+		- 'scope': Auswahl eines Bereichs des Zweiges
+			Parameter ist optional; Fallback: all
+			mögliche Werte:
+				single: nur die durch menuPid definierte Seite selbst
+				sub: alle Unterseiten
+				all: die Seite selbst inkl. Unterseiten
+				<int>: entspricht all mit einer Einschränkung auf <int> Ebenen von Unterseiten
+			die Anzahl der Ebenen kann zusätzlich per TS eingeschränkt werden

@@ -1,0 +1,9 @@
+/**
+ *$Id$
+ */	
+plugin.tx_dkdstaticpublish {
+
+	# cat=plugin.tx_dkdstaticpublish/enable; type=int+; label=Page Type:TypeNum to be used internally. Default should be OK, but it can be changed if it collides with another extension or the existing TS.
+	typeNum = 216
+
+}

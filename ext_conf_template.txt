@@ -1,0 +1,6 @@
+#
+# $Id$
+#
+
+# cat=basic/file; type=string; label=Publish Dir: "Published" Documents are stored in/below this directory. Path from document_root, if not prepended by "/".
+publish_path = 

@@ -1,0 +1,808 @@
+a:2:{s:4:"meta";a:3:{s:5:"title";s:16:"dkd_statipublish";s:5:"descr";s:127:"EXT dkd_staticpublish generates static HTML files from TYPO3 site.
+
+This extension needs dkd_tools and extends dkd_xmlimport.";s:7:"options";a:2:{s:10:"usageCount";s:1:"1";s:19:"includeCodeAbstract";s:1:"1";}}s:5:"files";a:6:{s:14:"MD5_8955dc5c09";a:5:{s:8:"filename";s:32:"class.tx_dkdstaticpublish_cm.php";s:8:"filesize";i:6297;s:6:"header";a:5:{s:4:"text";s:39:"
+
+Addition of an item to the clickmenu
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}s:5:"other";a:1:{i:0;s:49:"@author  Thorsten Kahler <thorsten.kahler@dkd.de>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:40:"Thorsten Kahler <thorsten.kahler@dkd.de>";}}}s:3:"DAT";a:4:{i:1;a:8:{s:6:"header";s:30:"class tx_dkdstaticpublish_cm {";s:5:"class";i:1;s:11:"parentClass";s:22:"tx_dkdstaticpublish_cm";s:4:"cDat";a:3:{s:4:"text";s:3:"
+
+
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}}s:7:"content";a:2:{i:0;s:124:"
+	var $writeDevLog = FALSE;       // flag: devLog enabled?
+	var $preConf = array();     // array of configuration presets
+
+	";i:1;i:-1;}s:12:"content_size";i:124;s:13:"content_lines";i:4;s:6:"atLine";i:35;}i:3;a:7:{s:6:"header";s:49:"function main(&$backRef,$menuItems,$table,$uid) {";s:11:"parentClass";s:22:"tx_dkdstaticpublish_cm";s:4:"cDat";a:3:{s:4:"text";s:3:"
+
+
+";s:5:"param";a:4:{i:0;a:2:{i:0;s:6:"[type]";i:1;s:14:"$$backRef: ...";}i:1;a:2:{i:0;s:6:"[type]";i:1;s:15:"$menuItems: ...";}i:2;a:2:{i:0;s:6:"[type]";i:1;s:11:"$table: ...";}i:3;a:2:{i:0;s:6:"[type]";i:1;s:9:"$uid: ...";}}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}}s:7:"content";a:2:{i:0;s:507:"
+			// enable dev logging if set
+		if( is_array( $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_div.php']['devLog'] ) || TYPO3_DLOG ) {
+			$this->writeDevLog = TRUE;
+		}
+
+		$localItems = Array();
+		if( ! $backRef->cmLevel ) {
+			$permission_bitmask = 17;       // BE User needs rights to show page and edit content
+			$publish_permsClause = $GLOBALS['BE_USER']-
+[...]
+	}
+			}
+			if( $appendFlag ) {
+				$menuItems = array_merge( $menuItems, $localItems );
+			}
+		}
+		return $menuItems;
+	}
+
+
+
+	";i:1;i:1;}s:12:"content_size";i:3045;s:13:"content_lines";i:86;s:6:"atLine";i:47;}i:5;a:4:{s:6:"header";s:25:"function includeLL()    {";s:11:"parentClass";s:22:"tx_dkdstaticpublish_cm";s:4:"cDat";a:3:{s:4:"text";s:92:"
+
+Includes the [extDir]/locallang.php and returns the $LOCAL_LANG array found in that file.
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:5:"array";i:1;s:15:"language labels";}}s:6:"atLine";i:139;}i:7;a:7:{s:6:"header";s:24:"function initPreConf() {";s:11:"parentClass";s:22:"tx_dkdstaticpublish_cm";s:4:"cDat";a:3:{s:4:"text";s:69:"
+
+Reads configuration presets based on configuration in UserTSConfig
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:7:"integer";i:1;s:10:"error code";}}s:7:"content";a:2:{i:0;s:507:"
+		$TSConfig = $GLOBALS['BE_USER']->getTSConfigProp('xMOD_tx_dkdstaticpublish_cm1');
+		if ( $this->writeDevLog ) {
+			t3lib_div::devLog('User TSConfig', 'tx_dkd_staticpublish_cm', 0, $TSConfig);
+		}
+
+		$preConfOptions = array('label', 'pageTypes', 'languages', 'scope', 'maxDepth', 'ready' );
+
+		if( is_array($TSConfig) ) {
+			foreach( $TSConfig as $index => $alternative )  
+[...]
+'])  {
+	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/dkd_staticpublish/class.tx_dkdstaticpublish_cm.php']);
+}
+
+?>";i:1;i:1;}s:12:"content_size";i:1388;s:13:"content_lines";i:45;s:6:"atLine";i:150;}}s:10:"usageCount";a:4:{s:12:"H_6bb3b3cbf2";a:2:{s:24:"_searchtime_milliseconds";d:36;s:15:"_functionHeader";s:30:"class tx_dkdstaticpublish_cm {";}s:12:"H_1f452ab737";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_ae0ea69cd3";a:3:{s:8:"fileName";s:13:"cm1/index.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:4;s:15:"_functionHeader";s:49:"function main(&$backRef,$menuItems,$table,$uid) {";}s:12:"H_196be289ee";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_8955dc5c09";a:3:{s:8:"fileName";s:32:"class.tx_dkdstaticpublish_cm.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:5;s:15:"_functionHeader";s:25:"function includeLL()    {";}s:12:"H_766630d370";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_8955dc5c09";a:3:{s:8:"fileName";s:32:"class.tx_dkdstaticpublish_cm.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:4;s:15:"_functionHeader";s:24:"function initPreConf() {";}}}s:14:"MD5_a5aeef5170";a:5:{s:8:"filename";s:35:"class.tx_dkdstaticpublish_procs.php";s:8:"filesize";i:1694;s:6:"header";a:5:{s:4:"text";s:94:"
+
+container class for pre- and post_processing functions used by dkd_staticpublish extension.
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}s:5:"other";a:1:{i:0;s:48:"@author	Thorsten Kahler <thorsten.kahler@dkd.de>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:40:"Thorsten Kahler <thorsten.kahler@dkd.de>";}}}s:3:"DAT";a:2:{i:1;a:5:{s:6:"header";s:33:"class tx_dkdstaticpublish_procs {";s:5:"class";i:1;s:11:"parentClass";s:25:"tx_dkdstaticpublish_procs";s:4:"cDat";a:5:{s:4:"text";s:95:"
+
+container class for pre- and post_processing functions used by dkd_staticpublish extension.
+
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}s:5:"other";a:1:{i:0;s:48:"@author	Thorsten Kahler <thorsten.kahler@dkd.de>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:40:"Thorsten Kahler <thorsten.kahler@dkd.de>";}}}s:6:"atLine";i:34;}i:3;a:6:{s:6:"header";s:39:"function process_afterStaticPublish() {";s:11:"parentClass";s:25:"tx_dkdstaticpublish_procs";s:7:"content";a:2:{i:0;s:398:"			// delete publishing-ID after successfull import
+		$GLOBALS['BE_USER']->setAndSaveSessionData( 'dkd_staticpublish_pubID', '' );
+		return;
+	}
+
+}
+
+if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/dkd_staticpublish/class.tx_dkdmstaticpublish_procs.php'])	{
+	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']["ext/dkd_staticpublish/class.tx_dkdstaticpublish_procs.php']);
+}";i:1;i:0;}s:12:"content_size";i:398;s:13:"content_lines";i:9;s:6:"atLine";i:36;}}s:10:"usageCount";a:2:{s:12:"H_53a5a26417";a:2:{s:24:"_searchtime_milliseconds";d:4;s:15:"_functionHeader";s:33:"class tx_dkdstaticpublish_procs {";}s:12:"H_a4b686595e";a:2:{s:24:"_searchtime_milliseconds";d:3;s:15:"_functionHeader";s:39:"function process_afterStaticPublish() {";}}}s:14:"MD5_2d719dc1e0";a:5:{s:8:"filename";s:29:"class.ux_tx_dkdxml_impexp.php";s:8:"filesize";i:16814;s:6:"header";a:5:{s:4:"text";s:70:"
+
+BE class providing functionality for the 'dkd_xmlimport' extension.
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}s:5:"other";a:1:{i:0;s:48:"@author	Thorsten Kahler <thorsten.kahler@dkd.de>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:40:"Thorsten Kahler <thorsten.kahler@dkd.de>";}}}s:3:"DAT";a:7:{i:1;a:7:{s:6:"header";s:52:"class ux_tx_dkdxml_impexp extends tx_dkdxml_impexp {";s:5:"class";i:1;s:11:"parentClass";s:19:"ux_tx_dkdxml_impexp";s:7:"content";a:2:{i:0;s:5:"
+
+
+
+	";i:1;i:-1;}s:12:"content_size";i:5;s:13:"content_lines";i:4;s:6:"atLine";i:36;}i:3;a:7:{s:6:"header";s:20:"function modMenu()	{";s:11:"parentClass";s:19:"ux_tx_dkdxml_impexp";s:4:"cDat";a:3:{s:4:"text";s:74:"
+
+Adds items to the ->MOD_MENU array. Used for the function menu selector.";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}}s:7:"content";a:2:{i:0;s:205:"
+		return array (
+			'function' => Array (
+				'3' => $GLOBALS['LANG']->getLL('function3'),
+				'1' => $GLOBALS['LANG']->getLL('function1'),
+				'2' => $GLOBALS['LANG']->getLL('function2')
+			)
+		);
+	}
+
+
+	";i:1;i:0;}s:12:"content_size";i:205;s:13:"content_lines";i:11;s:6:"atLine";i:46;}i:5;a:7:{s:6:"header";s:26:"function moduleContent()	{";s:11:"parentClass";s:19:"ux_tx_dkdxml_impexp";s:4:"cDat";a:3:{s:4:"text";s:30:"
+
+Generates the module content";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}}s:7:"content";a:2:{i:0;s:507:"
+		switch((string)$this->MOD_SETTINGS['function'])	{
+			case 1:
+				$content = $this->importXML();
+				$this->content .= $this->doc->section($GLOBALS['LANG']->getLL('importXML_header'),$content,0,1);
+			break;
+			case 2:
+				$content = $this->importPics();
+				$this->content .= $this->doc->section($GLOBALS['LANG']->getLL('importPics_header'),$content,0,1);
+			break;
+			cas
+[...]
+$location .= 'cm1/index.php?id=' . $this->id .'&SET[function]=2';
+				header( 'Location: ' . $location );
+			break;
+		}
+	}
+
+	";i:1;i:1;}s:12:"content_size";i:762;s:13:"content_lines";i:19;s:6:"atLine";i:63;}i:7;a:6:{s:6:"header";s:21:"function importXML(){";s:11:"parentClass";s:19:"ux_tx_dkdxml_impexp";s:7:"content";a:2:{i:0;s:507:"
+		$content .= sprintf('<h4>%s</h4><p>%s</p>', $GLOBALS['LANG']->getLL('importXML_conf_header'), $GLOBALS['LANG']->getLL('importXML_conf_hint'));
+
+		$configurations = array();
+		foreach( $this->selections as $sel ) {
+			$configurations[] = array( 'value' => $sel, 'label' => $sel );
+		}
+		$select = $this->selectBox( 'config', $configurations, $this->conf_selected );
+		$cont
+[...]
+printf( '<p class="perm-denied">%s</p>', $GLOBALS['LANG']->getLL('importXML_msg_noUrl') );
+			}
+		}
+
+		return $content;
+	}
+
+	";i:1;i:1;}s:12:"content_size";i:4227;s:13:"content_lines";i:96;s:6:"atLine";i:88;}i:9;a:6:{s:6:"header";s:22:"function importPics(){";s:11:"parentClass";s:19:"ux_tx_dkdxml_impexp";s:7:"content";a:2:{i:0;s:507:"
+		$content = '';
+
+		$select = "\n".'<select name="'. $this->prefixId. '[config]">';
+		foreach($this->selections as $sel){
+			$found = ($this->conf_selected == $sel) ? ' selected="selected"' : '';
+			$select .= sprintf('<option value="%s"%s>%s</option>', $sel, $found, $sel);
+		}
+		$select .= '</select>'."\n";
+		$content .= sprintf('<h4>%s</h4><p>%s</p>', $GLOBALS['LANG']->
+[...]
+		$content .= $this->backLink( $GLOBALS['LANG']->getLL('importPics_backLink'), '<h4>|</h4>' );
+		}
+
+		return $content;
+	}
+
+
+	";i:1;i:1;}s:12:"content_size";i:7637;s:13:"content_lines";i:184;s:6:"atLine";i:190;}i:11;a:4:{s:6:"header";s:57:"function selectBox( $param, $options, $selected=false ) {";s:11:"parentClass";s:19:"ux_tx_dkdxml_impexp";s:4:"cDat";a:3:{s:4:"text";s:41:"
+
+Create HTML for Select Box (drop down)
+";s:5:"param";a:3:{i:0;a:2:{i:0;s:6:"string";i:1;s:103:"$param name of the piVar (used for name attrib of select box and to pick the current value of this var)";}i:1;a:2:{i:0;s:5:"array";i:1;s:79:"$options assoc array of value/label pairs which are available in the select box";}i:2;a:2:{i:0;s:4:"bool";i:1;s:76:"$selected (optional) flag: indicates whether a value was previously selected";}}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:9:"HTML code";}}s:6:"atLine";i:383;}i:13;a:7:{s:6:"header";s:45:"function sb_publications( $selected=false ) {";s:11:"parentClass";s:19:"ux_tx_dkdxml_impexp";s:4:"cDat";a:3:{s:4:"text";s:61:"
+
+Generate select box with publications of the current page
+
+";s:5:"param";a:1:{i:0;a:2:{i:0;s:4:"bool";i:1;s:82:"$selected (optional) flag: indicates whether a publication was previously selected";}}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}}s:7:"content";a:2:{i:0;s:507:"			// select publication
+		$publications = array();
+		$dateFormat = $GLOBALS['LANG']->getLL('pubID_dateFormat');
+
+		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
+			'pub_id, count(uid) as whole, (count(uid) - sum(hidden)) as avail',
+			$this->config['table'],
+			'pid='. $this->id . t3lib_BEfunc::deleteClause( $this->config['table'] ),
+			'pub_id',
+			'pub_id DESC'
+		);
+
+	
+[...]
+php'])	{
+	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/dkd_staticpublish/class.ux_tx_dkdxml_impexp.php']);
+}
+
+
+?>";i:1;i:1;}s:12:"content_size";i:930;s:13:"content_lines";i:31;s:6:"atLine";i:415;}}s:10:"usageCount";a:7:{s:12:"H_8d23f9f1e1";a:2:{s:24:"_searchtime_milliseconds";d:33;s:15:"_functionHeader";s:52:"class ux_tx_dkdxml_impexp extends tx_dkdxml_impexp {";}s:12:"H_290044bf25";a:2:{s:24:"_searchtime_milliseconds";d:3;s:15:"_functionHeader";s:20:"function modMenu()	{";}s:12:"H_2bf59c198a";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_75d4502a18";a:3:{s:8:"fileName";s:37:"cm1/class.tx_dkdstaticpublish_cm1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:5;s:15:"_functionHeader";s:26:"function moduleContent()	{";}s:12:"H_27fe194d2d";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_2d719dc1e0";a:3:{s:8:"fileName";s:29:"class.ux_tx_dkdxml_impexp.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:4;s:15:"_functionHeader";s:21:"function importXML(){";}s:12:"H_1851291a95";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_2d719dc1e0";a:3:{s:8:"fileName";s:29:"class.ux_tx_dkdxml_impexp.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:4;s:15:"_functionHeader";s:22:"function importPics(){";}s:12:"H_aa91dd61b1";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:2;s:5:"TOTAL";i:2;}s:14:"MD5_2d719dc1e0";a:3:{s:8:"fileName";s:29:"class.ux_tx_dkdxml_impexp.php";s:11:"objectUsage";i:2;s:5:"TOTAL";i:2;}s:24:"_searchtime_milliseconds";d:8;s:15:"_functionHeader";s:57:"function selectBox( $param, $options, $selected=false ) {";}s:12:"H_7167a03752";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_2d719dc1e0";a:3:{s:8:"fileName";s:29:"class.ux_tx_dkdxml_impexp.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:7;s:15:"_functionHeader";s:45:"function sb_publications( $selected=false ) {";}}}s:14:"MD5_966b7b1ce6";a:5:{s:8:"filename";s:31:"class.ux_tx_dkdxml_importer.php";s:8:"filesize";i:4896;s:6:"header";a:5:{s:4:"text";s:70:"
+
+BE class providing functionality for the 'dkd_xmlimport' extension.
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}s:5:"other";a:1:{i:0;s:48:"@author	Thorsten Kahler <thorsten.kahler@dkd.de>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:40:"Thorsten Kahler <thorsten.kahler@dkd.de>";}}}s:3:"DAT";a:4:{i:1;a:8:{s:6:"header";s:55:"class ux_tx_dkdxml_importer extends tx_dkdxml_importer{";s:5:"class";i:1;s:11:"parentClass";s:21:"ux_tx_dkdxml_importer";s:4:"cDat";a:5:{s:4:"text";s:72:"
+
+BE class providing functionality for the 'dkd_xmlimport' extension.
+
+
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}s:5:"other";a:1:{i:0;s:48:"@author	Thorsten Kahler <thorsten.kahler@dkd.de>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:40:"Thorsten Kahler <thorsten.kahler@dkd.de>";}}}s:7:"content";a:2:{i:0;s:1:"
+";i:1;i:-1;}s:12:"content_size";i:1;s:13:"content_lines";i:1;s:6:"atLine";i:31;}i:3;a:6:{s:6:"header";s:34:"function assocArray2Table($assoc){";s:11:"parentClass";s:21:"ux_tx_dkdxml_importer";s:7:"content";a:2:{i:0;s:507:"
+		$table = array();
+
+		if( is_array( $assoc['pages'] ) && count( $assoc['pages'] ) ) {
+
+			$pages = &$assoc['pages'];
+
+			foreach( $pages as $page ) {
+				$rows = array();
+				if( is_array( $page ) ) {
+					$commonAttributes = array();
+					$keys = array_keys ($page);
+					foreach( $keys as $key ) {
+						if( is_int($key) ) {
+							$tag = $page[$key];
+							$rows[] = ar
+[...]
+_merge( $table, $rows );
+				}
+			}
+
+		}
+
+
+//debug( array( 'assoc' => $assoc, 'table' => $table ) );
+		return $table;
+	}
+
+
+
+	";i:1;i:1;}s:12:"content_size";i:762;s:13:"content_lines";i:35;s:6:"atLine";i:34;}i:5;a:4:{s:6:"header";s:27:"function copy($from, $to) {";s:11:"parentClass";s:21:"ux_tx_dkdxml_importer";s:4:"cDat";a:3:{s:4:"text";s:53:"
+
+fetch file from URL and save it to local directory
+";s:5:"param";a:2:{i:0;a:2:{i:0;s:6:"string";i:1;s:25:"$from	the URL of the file";}i:1;a:2:{i:0;s:6:"string";i:1;s:23:"$to	the local directory";}}s:6:"return";a:2:{i:0;s:3:"int";i:1;s:122:"error-codes: 0=ok; 1=could not create dir; 2=could not write to dir; 3=could not read from URL; 4=could not write to file;";}}s:6:"atLine";i:77;}i:7;a:7:{s:6:"header";s:44:"function forcePathExistence( $dir, $path ) {";s:11:"parentClass";s:21:"ux_tx_dkdxml_importer";s:4:"cDat";a:3:{s:4:"text";s:53:"
+
+fetch file from URL and save it to local directory
+";s:5:"param";a:2:{i:0;a:2:{i:0;s:6:"string";i:1;s:22:"$dir start at this dir";}i:1;a:2:{i:0;s:6:"string";i:1;s:34:"$path force existence of this path";}}s:6:"return";a:2:{i:0;s:3:"int";i:1;s:43:"error-codes: 0=ok; 1=could not create path;";}}s:7:"content";a:2:{i:0;s:507:"
+		$pathParts = explode( '/', $path );
+
+		foreach( $pathParts as $p ) {
+			$dir .= '/' . $p;
+				// check R/W rights
+			if ( ! is_dir($dir) ) {
+				if (! t3lib_div::mkdir($dir) ) {
+					$this->log('error', sprintf('Could not create directory %s! Please check file permissions.', $dir) );
+					return 1;
+				}
+			}
+			if ( ! is_writable($dir) ) {
+				$this->log('error', sprin
+[...]
+p"])	{
+	include_once($TYPO3_CONF_VARS[TYPO3_MODE]["XCLASS"]["ext/dkd_staticpublish/class.ux_tx_dkdxml_importer.php"]);
+}
+
+
+?>";i:1;i:1;}s:12:"content_size";i:774;s:13:"content_lines";i:31;s:6:"atLine";i:136;}}s:10:"usageCount";a:4:{s:12:"H_0e9d9c5da2";a:2:{s:24:"_searchtime_milliseconds";d:32;s:15:"_functionHeader";s:55:"class ux_tx_dkdxml_importer extends tx_dkdxml_importer{";}s:12:"H_c5818be48d";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_2d719dc1e0";a:3:{s:8:"fileName";s:29:"class.ux_tx_dkdxml_impexp.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:6;s:15:"_functionHeader";s:34:"function assocArray2Table($assoc){";}s:12:"H_edf80e59e2";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_2d719dc1e0";a:3:{s:8:"fileName";s:29:"class.ux_tx_dkdxml_impexp.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:7;s:15:"_functionHeader";s:27:"function copy($from, $to) {";}s:12:"H_086c6dff96";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_966b7b1ce6";a:3:{s:8:"fileName";s:31:"class.ux_tx_dkdxml_importer.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:5;s:15:"_functionHeader";s:44:"function forcePathExistence( $dir, $path ) {";}}}s:14:"MD5_75d4502a18";a:5:{s:8:"filename";s:37:"cm1/class.tx_dkdstaticpublish_cm1.php";s:8:"filesize";i:29049;s:6:"header";a:5:{s:4:"text";s:31:"
+
+dkd_staticpublish module cm1
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}s:5:"other";a:1:{i:0;s:48:"@author	Thorsten Kahler <thorsten.kahler@dkd.de>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:40:"Thorsten Kahler <thorsten.kahler@dkd.de>";}}}s:3:"DAT";a:21:{i:1;a:7:{s:6:"header";s:52:"class tx_dkdstaticpublish_cm1 extends t3lib_SCbase {";s:5:"class";i:1;s:11:"parentClass";s:23:"tx_dkdstaticpublish_cm1";s:7:"content";a:2:{i:0;s:583:"
+	var $prefixId = 'tx_dkdstaticpublish_cm1';
+	var $modVars = array();		// variables from this module
+	var $sysPage = '';		// page selector obj
+	var $tmpl = '';		// TS template obj
+		// Extension that will be used for writing the files
+	var $importExtension = array( 'extKey' => 'dkd_xmlimport', 'mod' => 'mod1', 'mode' => 'SET[function]=1' );
+		// list for permission bit mask
+	var $permissions = array( 'show' => '1', 'edit' => '2', 'delete' => '4', 'new' => '8', 'content' => '16' );
+	var $publish_permsClause = '';		// part of SQL where-statement
+
+
+	/**
+	 * Initialisation
+	 */
+
+	";i:1;i:-1;}s:12:"content_size";i:583;s:13:"content_lines";i:16;s:6:"atLine";i:40;}i:3;a:8:{s:6:"header";s:17:"function init()	{";s:11:"parentClass";s:23:"tx_dkdstaticpublish_cm1";s:11:"sectionText";a:1:{i:0;s:14:"Initialisation";}s:4:"cDat";a:5:{s:4:"text";s:87:"
+
+Initializes the backend module by setting internal variables, initializing the menu.
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:4:"void";i:1;s:0:"";}s:5:"other";a:1:{i:0;s:17:"@see menuConfig()";}s:11:"other_index";a:1:{s:4:"@see";a:1:{i:0;s:13:"menuConfig() ";}}}s:7:"content";a:2:{i:0;s:507:"		parent::init();
+
+			// set the permissions clause publishing function
+		$permission_bitmask = ( $this->permissions['show'] | $this->permissions['content'] );
+		$this->publish_permsClause = $GLOBALS['BE_USER']->getPagePermsClause( $permission_bitmask );
+
+			// initialize the page selector
+		$this->sys_page = t3lib_div::makeInstance('t3lib_pageSelect');
+		$this->sys_page->
+[...]
+$this->sys_page->getRootLine( $this->id );
+		$this->tmpl->start($rootline);
+
+		$this->modVars = &$this->fetchVars();
+
+	}
+
+
+
+	";i:1;i:1;}s:12:"content_size";i:644;s:13:"content_lines";i:22;s:6:"atLine";i:63;}i:5;a:7:{s:6:"header";s:23:"function menuConfig()	{";s:11:"parentClass";s:23:"tx_dkdstaticpublish_cm1";s:4:"cDat";a:3:{s:4:"text";s:74:"
+
+Adds items to the ->MOD_MENU array. Used for the function menu selector.";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}}s:7:"content";a:2:{i:0;s:191:"		$this->MOD_MENU = Array (
+			'function' => Array (
+				'1' => $GLOBALS['LANG']->getLL('function1'),
+				'2' => $GLOBALS['LANG']->getLL('function2')
+			)
+		);
+		parent::menuConfig();
+	}
+
+
+
+	";i:1;i:0;}s:12:"content_size";i:191;s:13:"content_lines";i:11;s:6:"atLine";i:91;}i:7;a:7:{s:6:"header";s:23:"function &fetchVars() {";s:11:"parentClass";s:23:"tx_dkdstaticpublish_cm1";s:4:"cDat";a:3:{s:4:"text";s:29:"
+
+Fetch the module variables
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:5:"array";i:1;s:11:"the modVars";}}s:7:"content";a:2:{i:0;s:507:"			// initialize the vars
+		$modVars = array(
+			'pageTypes' => array(),
+			'languages' => array(),
+			'ready' => false,
+			'scope' => '',
+			'delRelease' => array(),
+			'view' => '',
+			'maxDepth' => 1
+		);
+
+			// set the modVars without checking the input
+		$vars = t3lib_div::GPVar( $this->prefixId );
+
+		if( is_array($vars) ) {
+			foreach($vars as $var => $val) {
+				$mo
+[...]
+p['plugin.']['tx_dkdstaticpublish_pi_xmlmenu.']['maxLevels'] );
+		}
+
+		return $modVars;
+	}
+
+
+
+
+	/**
+	 * Main function
+	 */
+
+	";i:1;i:1;}s:12:"content_size";i:679;s:13:"content_lines";i:34;s:6:"atLine";i:108;}i:9;a:8:{s:6:"header";s:17:"function main()	{";s:11:"parentClass";s:23:"tx_dkdstaticpublish_cm1";s:11:"sectionText";a:1:{i:0;s:13:"Main function";}s:4:"cDat";a:3:{s:4:"text";s:66:"
+
+Main function of the module. Write the content to $this->content";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}}s:7:"content";a:2:{i:0;s:407:"		global $BE_USER,$BACK_PATH,$TCA_DESCR,$TCA,$CLIENT,$TYPO3_CONF_VARS;
+
+			// Draw the header.
+		$this->doc = t3lib_div::makeInstance('mediumDoc');
+		$this->doc->backPath = $BACK_PATH;
+		$this->doc->docType = 'xhtml_trans';
+		$this->doc->form='<form action="index.php" method="POST">';
+
+			// JavaScript
+		$this->doc->JScode = '
+			<script language="javascript" type="text/javascript">
+				script_ended = 0;";i:1;i:0;}s:12:"content_size";i:407;s:13:"content_lines";i:11;s:6:"atLine";i:148;}i:11;a:6:{s:6:"header";s:25:"function jumpToUrl(URL)	{";s:11:"parentClass";s:23:"tx_dkdstaticpublish_cm1";s:7:"content";a:2:{i:0;s:507:"					document.location = URL;
+				}
+			</script>
+		';
+			// import additional stylesheet
+		$this->doc->styleSheetFile2 = t3lib_extMgm::extRelPath('dkd_staticpublish') . '/res/styles.css';
+
+		$this->content.=$this->doc->startPage($GLOBALS['LANG']->getLL('title'));
+		$this->content.=$this->doc->header($GLOBALS['LANG']->getLL('title'));
+		$this->content.=$this->doc->spacer(5)
+[...]
+6" class="c-inputButton" title="Cancel" alt="" /></a>';
+		}
+
+		$this->content.=$this->doc->spacer(10);
+	}
+
+
+
+	/**
+	 *
+	 */
+
+	";i:1;i:1;}s:12:"content_size";i:2181;s:13:"content_lines";i:55;s:6:"atLine";i:161;}i:13;a:8:{s:6:"header";s:25:"function printContent()	{";s:11:"parentClass";s:23:"tx_dkdstaticpublish_cm1";s:11:"sectionText";a:0:{}s:4:"cDat";a:3:{s:4:"text";s:28:"
+
+Output completed document
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:4:"void";i:1;s:0:"";}}s:7:"content";a:2:{i:0;s:101:"
+		$this->content.=$this->doc->endPage();
+		echo $this->content;
+	}
+
+
+
+	/**
+	 * Functionality
+	 */
+
+	";i:1;i:0;}s:12:"content_size";i:101;s:13:"content_lines";i:11;s:6:"atLine";i:222;}i:15;a:8:{s:6:"header";s:26:"function moduleContent()	{";s:11:"parentClass";s:23:"tx_dkdstaticpublish_cm1";s:11:"sectionText";a:1:{i:0;s:13:"Functionality";}s:4:"cDat";a:3:{s:4:"text";s:21:"
+
+Dispatch functions
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:4:"void";i:1;s:0:"";}}s:7:"content";a:2:{i:0;s:405:"		switch((string)$this->MOD_SETTINGS['function'])	{
+			case 1:
+				$content = $this->f_publishSubpages();
+				$this->content.=$this->doc->section( $GLOBALS['LANG']->getLL( 'header_config'),$content,0,1);
+			break;
+			case 2:
+				$content = $this->f_previousReleases();
+				$this->content.=$this->doc->section( $GLOBALS['LANG']->getLL( 'PR_header'),$content,0,1);
+			break;
+			default:
+			break;
+		}
+	}
+
+
+	";i:1;i:0;}s:12:"content_size";i:405;s:13:"content_lines";i:15;s:6:"atLine";i:239;}i:17;a:7:{s:6:"header";s:30:"function f_publishSubpages() {";s:11:"parentClass";s:23:"tx_dkdstaticpublish_cm1";s:4:"cDat";a:3:{s:4:"text";s:46:"
+
+Wrapper function for task "publishSubpages"
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:18:"content of BE form";}}s:7:"content";a:2:{i:0;s:507:"		$content = '';
+
+		$hiddenFields = array(
+			'id' => array( 'type' => 'hidden', 'name' => 'id', 'value' => $this->id ),
+		);
+		$content .= $this->form_input( $hiddenFields['id'] );
+
+		$content .= $this->configForm();
+
+			// if configuration is ready, set a link to another BE module
+		if( $this->modVars['ready'] ) {
+				// restrict depth of XMLMenu to value set in TS
+			$s
+[...]
+]->getLL( 'header_switchToMod' ),
+				$GLOBALS['LANG']->getLL( 'msg_switchToModLink' )
+			);
+		}
+
+		return $content;
+	}
+
+
+
+
+	";i:1;i:1;}s:12:"content_size";i:2200;s:13:"content_lines";i:63;s:6:"atLine";i:260;}i:19;a:7:{s:6:"header";s:31:"function f_previousReleases() {";s:11:"parentClass";s:23:"tx_dkdstaticpublish_cm1";s:4:"cDat";a:3:{s:4:"text";s:48:"
+
+Wrapper function for task "Previous Releases"
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:18:"content of BE form";}}s:7:"content";a:2:{i:0;s:507:"		$content = '';
+
+		$hiddenFields = array(
+			'id' => array( 'type' => 'hidden', 'name' => 'id', 'value' => $this->id ),
+		);
+		$content .= $this->form_input( $hiddenFields['id'] );
+
+		if( count( $this->modVars['delRelease'] ) > 0 ) {
+			$delMessage = $this->deleteReleases( $this->modVars['delRelease'] );
+		} else {
+			$delMessage = '';
+		}
+
+		$content .= '<h4>' . $GLOBALS
+[...]
+hr />' . $this->viewReleaseDetails( $this->modVars['view'] );
+		}
+
+		return $content;
+	}
+
+
+
+	/**
+	 * Helper functions
+	 */
+
+	";i:1;i:1;}s:12:"content_size";i:2021;s:13:"content_lines";i:67;s:6:"atLine";i:329;}i:21;a:8:{s:6:"header";s:23:"function configForm() {";s:11:"parentClass";s:23:"tx_dkdstaticpublish_cm1";s:11:"sectionText";a:1:{i:0;s:16:"Helper functions";}s:4:"cDat";a:3:{s:4:"text";s:52:"
+
+Generate configuration form to trigger PI XMLMenu
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:18:"HTML code for form";}}s:7:"content";a:2:{i:0;s:507:"		$content = '';
+		$pageTypes = array();
+		$languages = array();
+
+		$pt = &$this->tmpl->setup['types.'];
+		foreach( $pt as $num => $label ) {
+			if(  $num != $this->tmpl->setup['plugin.']['tx_dkdstaticpublish_pi_xmlmenu.']['type_self'] ) {
+				$pageTypes[$num] = array(
+					'typeNum' => $num,
+					'label' => sprintf( '%s (%s)', $label, $num ),
+					'selected' => false
+				
+[...]
+> 'submit', 'value' => 'Send' );
+		$content .= '<p>'. $this->form_input( $submitButton ) .'</p>';
+
+		return $content;
+	}
+
+
+
+	";i:1;i:1;}s:12:"content_size";i:2804;s:13:"content_lines";i:87;s:6:"atLine";i:402;}i:23;a:7:{s:6:"header";s:52:"function makeExportLink( $id, $type, $attributes ) {";s:11:"parentClass";s:23:"tx_dkdstaticpublish_cm1";s:4:"cDat";a:3:{s:4:"text";s:34:"
+
+Generate link to "exported XML"
+";s:5:"param";a:3:{i:0;a:2:{i:0;s:3:"int";i:1;s:26:"$id page id of publication";}i:1;a:2:{i:0;s:3:"int";i:1;s:44:"$type page type for XML generation (XMLMenu)";}i:2;a:2:{i:0;s:5:"array";i:1;s:41:"$attributes used to adjust XML generation";}}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:18:"link to "XML file"";}}s:7:"content";a:2:{i:0;s:231:"		$link = t3lib_div::getIndpEnv('TYPO3_SITE_URL');
+		$link .= 'index.php?id=' . intval($id);
+		$link .= '&type=' . $type;
+		foreach($attributes as $key => $value) {
+			$link .= '&'. $key .'='. $value;
+		}
+
+		return $link;
+
+	}
+
+
+
+
+	";i:1;i:0;}s:12:"content_size";i:231;s:13:"content_lines";i:14;s:6:"atLine";i:498;}i:25;a:7:{s:6:"header";s:63:"function showTree( $treeStartingPoint, $scope='', $depth='' ) {";s:11:"parentClass";s:23:"tx_dkdstaticpublish_cm1";s:4:"cDat";a:3:{s:4:"text";s:60:"
+
+Display a tree of pages
+Makes use of class t3lib_pagetree
+";s:5:"param";a:3:{i:0;a:2:{i:0;s:3:"int";i:1;s:45:"$treeStartingPoint root of the page tree part";}i:1;a:2:{i:0;s:6:"string";i:1;s:78:"$scope determines scope of the page tree part; three options: single, sub, all";}i:2;a:2:{i:0;s:3:"int";i:1;s:26:"$depth number of sublevels";}}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:9:"HTML code";}}s:7:"content";a:2:{i:0;s:507:"		require_once(PATH_t3lib.'class.t3lib_pagetree.php');
+
+			// adjusting scope if depth = 0
+		if( $depth === 0 ) {
+			$scope = 'single';
+		}
+
+			// Initialize starting point of page tree:
+
+		$treeStartingRecord = t3lib_BEfunc::getRecord( 'pages', $treeStartingPoint );
+
+			// Initialize tree object:
+		$tree = t3lib_div::makeInstance('t3lib_pageTree');
+		$tree->init('AND '.$G
+[...]
+adding="0" class="pageTree">'.$output.'</table>';
+
+		return $output;
+	}
+
+
+	/**
+	 * Functions related to DB operations
+	 */
+
+	";i:1;i:1;}s:12:"content_size";i:1344;s:13:"content_lines";i:57;s:6:"atLine";i:522;}i:27;a:8:{s:6:"header";s:24:"function getReleases() {";s:11:"parentClass";s:23:"tx_dkdstaticpublish_cm1";s:11:"sectionText";a:1:{i:0;s:34:"Functions related to DB operations";}s:4:"cDat";a:3:{s:4:"text";s:38:"
+
+Fetch publications from cache table
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:5:"array";i:1;s:90:"assoc array of publications with count of pages and date of publication ("sum"/"datetime")";}}s:7:"content";a:2:{i:0;s:480:"
+		$releases = array();
+
+		$queryArray = array(
+			'SELECT' => 'count(uid) sum, pub_id datetime',
+			'FROM' => 'tx_dkdstaticpublish_urls',
+			'WHERE' => 'pid='. $this->id . t3lib_BEfunc::deleteClause('tx_dkdstaticpublish_urls'),
+			'ORDERBY' => 'datetime',
+			'GROUPBY' => 'datetime',
+		);
+
+		$res = $GLOBALS['TYPO3_DB']->exec_SELECT_queryArray( $queryArray );
+		while( $row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res) ) {
+			$releases[] = $row;
+		}
+
+		return $releases;
+
+	}
+
+
+	";i:1;i:0;}s:12:"content_size";i:480;s:13:"content_lines";i:21;s:6:"atLine";i:585;}i:29;a:7:{s:6:"header";s:36:"function deleteReleases( $relIDs ) {";s:11:"parentClass";s:23:"tx_dkdstaticpublish_cm1";s:4:"cDat";a:3:{s:4:"text";s:38:"
+
+Delete publication from cache table
+";s:5:"param";a:1:{i:0;a:2:{i:0;s:5:"array";i:1;s:28:"$relIDs list of publications";}}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:14:"result message";}}s:7:"content";a:2:{i:0;s:507:"
+		$releases = array();
+		$queryArray = array(
+			'SELECT' => 'count(uid) sum, pub_id datetime',
+			'FROM' => 'tx_dkdstaticpublish_urls',
+			'WHERE' => 'pub_id in('. implode( ',', $relIDs ) .')',
+			'GROUPBY' => 'datetime',
+		);
+		$res = $GLOBALS['TYPO3_DB']->exec_SELECT_queryArray( $queryArray );
+		while( $row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res) ) {
+			$releases
+[...]
+plode( ',', $relIDs ) .')',
+				array( 'deleted' => 1 )
+			 );
+		}
+
+		return count($relIDs) . ' have been deleted.';
+
+	}
+
+
+
+	";i:1;i:1;}s:12:"content_size";i:753;s:13:"content_lines";i:29;s:6:"atLine";i:613;}i:31;a:7:{s:6:"header";s:41:"function viewReleaseDetails($releaseID) {";s:11:"parentClass";s:23:"tx_dkdstaticpublish_cm1";s:4:"cDat";a:3:{s:4:"text";s:59:"
+
+Generate HTML table with info about specific publication
+";s:5:"param";a:1:{i:0;a:2:{i:0;s:3:"int";i:1;s:43:"$releaseID id of the publicatoin to display";}}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:49:"HTML table with details of publication $releaseID";}}s:7:"content";a:2:{i:0;s:507:"		$content = '';
+
+			// display header
+		$day = strftime( $GLOBALS['LANG']->getLL( 'PR_singleView_dateFormat' ), $releaseID );
+		$time = strftime( $GLOBALS['LANG']->getLL( 'PR_singleView_timeFormat' ), $releaseID );
+		$header = sprintf( $GLOBALS['LANG']->getLL( 'PR_singleView_header' ), $day, $time );
+		$content .= $this->doc->sectionHeader( $header, 1 );
+
+			// get releas
+[...]
+f( '<tr><td>%s</td><td>%s</td></tr>', $url['title'], $url['url'] );
+		}
+		$content .= '</table>';
+
+		return $content;
+	}
+
+
+
+	";i:1;i:1;}s:12:"content_size";i:1190;s:13:"content_lines";i:36;s:6:"atLine";i:649;}i:33;a:7:{s:6:"header";s:29:"function getLanguagesInDb() {";s:11:"parentClass";s:23:"tx_dkdstaticpublish_cm1";s:4:"cDat";a:3:{s:4:"text";s:36:"
+
+	Search for language labels in DB
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:5:"array";i:1;s:18:"array of languages";}}s:7:"content";a:2:{i:0;s:507:"		$languages = array();
+		$languages[0] = array( 'langID' => 0, 'langTitle' => 'default' );
+
+		$queryArray = array(
+			'SELECT' => 'distinct plo.sys_language_uid langID, sl.title langTitle',
+			'FROM' => 'pages, pages_language_overlay plo, sys_language sl',
+			'WHERE' => sprintf( 'pages.uid=plo.pid AND sl.uid=plo.sys_language_uid %s', $this->sys_page->where_hid_del ),
+			'
+[...]
+_fetch_assoc($res) ) {
+			$languages[] = $row;
+		}
+		return $languages;
+	}
+
+
+
+	/**
+	 * Form Generation Functions
+	 *
+	 */
+
+
+	";i:1;i:1;}s:12:"content_size";i:638;s:13:"content_lines";i:24;s:6:"atLine";i:691;}i:35;a:8:{s:6:"header";s:35:"function form_input(&$attributes) {";s:11:"parentClass";s:23:"tx_dkdstaticpublish_cm1";s:11:"sectionText";a:1:{i:0;s:25:"Form Generation Functions";}s:4:"cDat";a:5:{s:4:"text";s:35:"
+
+Generates HTML for an <input>-tag";s:5:"param";a:1:{i:0;a:2:{i:0;s:6:"[type]";i:1;s:17:"$$attributes: ...";}}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:23:"the resulting HTML code";}s:5:"other";a:1:{i:0;s:59:"@params	array	$attributes	the attributes of the <input>-tag";}s:11:"other_index";a:1:{s:7:"@params";a:1:{i:0;s:51:"array $attributes	the attributes of the <input>-tag";}}}s:7:"content";a:2:{i:0;s:507:"		$attribString = ' ';
+		$trailingSlash = ( substr( $this->doc->docType, 0, 5 ) == 'xhtml' ) ? ' /' : '';
+
+				// TODO: Sonderbehandlung von z.B. checked
+
+// types: text, password, checkbox, radio, submit, reset, file, hidden, image, button
+// attributes: accept,accesskey,align,alt,checked,datafld,datasrc,dataformatas,disabled,ismap,maxlength,name,onblur,onchange,onfocus,o
+[...]
+rintf( ' %s="%s"', $key, $value );
+			}
+		}
+
+		return sprintf( '<input%s%s>', rtrim($attribString), $trailingSlash );
+	}
+
+
+
+	";i:1;i:1;}s:12:"content_size";i:3325;s:13:"content_lines";i:110;s:6:"atLine";i:723;}i:37;a:7:{s:6:"header";s:48:"function form_select( &$attributes, &$options) {";s:11:"parentClass";s:23:"tx_dkdstaticpublish_cm1";s:4:"cDat";a:3:{s:4:"text";s:38:"
+
+Generate HTML code for a select box
+";s:5:"param";a:2:{i:0;a:2:{i:0;s:5:"array";i:1;s:54:"$attributes	array of attributes for the <selectt>-tatg";}i:1;a:2:{i:0;s:5:"array";i:1;s:68:"$options	array of options and their attributes for the <option>-tags";}}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:28:"HTML code for a dropdown box";}}s:7:"content";a:2:{i:0;s:507:"
+		$attribString = '';
+		$trailingSlash = ( substr( $this->doc->docType, 0, 5 ) == 'xhtml' ) ? ' /' : '';
+
+				// TODO: Sonderbehandlung von z.B. checked
+
+
+// attributes: datafld, datasrc, dataformatas, disabled, multiple, name, onblur, onchange, onfocus, size, tabindex
+/*
+? datafld
+? datasrc
+? dataformatas
+size
+*/
+			// attributes for <select>-tags
+		$attribs = ' name, si
+[...]
+tion%s>%s</option>', $attribString, $label );
+		}
+
+		return $selectTag . implode( "\n", $optionTags ) . '</select>';
+	}
+
+
+
+
+	";i:1;i:1;}s:12:"content_size";i:2481;s:13:"content_lines";i:73;s:6:"atLine";i:841;}i:39;a:4:{s:6:"header";s:63:"function form_checkBoxes( &$name, &$data, &$mapping, &$wrap ) {";s:11:"parentClass";s:23:"tx_dkdstaticpublish_cm1";s:4:"cDat";a:3:{s:4:"text";s:45:"
+
+Generate HTML code for a set of checkboxes
+";s:5:"param";a:4:{i:0;a:2:{i:0;s:6:"string";i:1;s:34:"$name	name attribute of checkboxes";}i:1;a:2:{i:0;s:5:"array";i:1;s:24:"$data	configuration data";}i:2;a:2:{i:0;s:5:"array";i:1;s:60:"$mapping	array with mapping config data->checkbox attributes";}i:3;a:2:{i:0;s:6:"string";i:1;s:110:"$wrap	format string for sprintf; implements the label as first argument and the <input>-tag as second argument";}}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:33:"HTML code for multiple checkboxes";}}s:6:"atLine";i:924;}i:41;a:7:{s:6:"header";s:65:"function form_dropDown( &$name, &$opt, $selAttributes=array() ) {";s:11:"parentClass";s:23:"tx_dkdstaticpublish_cm1";s:4:"cDat";a:3:{s:4:"text";s:40:"
+
+Generate HTML code for a dropdown box
+";s:5:"param";a:3:{i:0;a:2:{i:0;s:6:"string";i:1;s:38:"$name	name attribute of the select box";}i:1;a:2:{i:0;s:5:"array";i:1;s:29:"$opt	data for the option tags";}i:2;a:2:{i:0;s:5:"array";i:1;s:66:"$selAttributes	optional additional attributes for the <select>-tag";}}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:28:"HTML code for a dropdown box";}}s:7:"content";a:2:{i:0;s:507:"		$dd = '';
+
+			// use the additional attributes and overwrite them
+		$selAttributes['name'] = $name;
+		$selAttributes['size'] = 1;
+
+		if( substr( $this->doc->docType, 0, 5 ) == 'xhtml' ) {
+			$selAttributes['id'] = str_replace(
+				array( '[', ']' ),
+				array( '_', '_' ),
+				$name
+			);
+		}
+
+		return $this->form_select( $selAttributes, $opt );
+	}
+
+
+}
+
+
+
+if (defined('TYP
+[...]
+{
+	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/dkd_staticpublish/cm1/class.tx_dkdstaticpublish_cm1.php']);
+}
+
+?>";i:1;i:1;}s:12:"content_size";i:616;s:13:"content_lines";i:26;s:6:"atLine";i:950;}}s:10:"usageCount";a:21:{s:12:"H_044a18aca2";a:4:{s:3:"ALL";a:2:{s:12:"makeinstance";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_ae0ea69cd3";a:3:{s:8:"fileName";s:13:"cm1/index.php";s:12:"makeinstance";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:31;s:15:"_functionHeader";s:52:"class tx_dkdstaticpublish_cm1 extends t3lib_SCbase {";}s:12:"H_7c6ff40199";a:5:{s:3:"ALL";a:3:{s:11:"objectUsage";i:4;s:5:"TOTAL";i:5;s:14:"nonObjectUsage";i:1;}s:14:"MD5_75d4502a18";a:4:{s:8:"fileName";s:37:"cm1/class.tx_dkdstaticpublish_cm1.php";s:11:"objectUsage";i:3;s:5:"TOTAL";i:4;s:14:"nonObjectUsage";i:1;}s:14:"MD5_ae0ea69cd3";a:3:{s:8:"fileName";s:13:"cm1/index.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:10;s:15:"_functionHeader";s:17:"function init()	{";}s:12:"H_759a824b85";a:4:{s:3:"ALL";a:2:{s:14:"nonObjectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_75d4502a18";a:3:{s:8:"fileName";s:37:"cm1/class.tx_dkdstaticpublish_cm1.php";s:14:"nonObjectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:5;s:15:"_functionHeader";s:23:"function menuConfig()	{";}s:12:"H_2c242dee94";a:0:{}s:12:"H_9c2550bb82";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_ae0ea69cd3";a:3:{s:8:"fileName";s:13:"cm1/index.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:3;s:15:"_functionHeader";s:17:"function main()	{";}s:12:"H_0a54405331";a:2:{s:24:"_searchtime_milliseconds";d:3;s:15:"_functionHeader";s:25:"function jumpToUrl(URL)	{";}s:12:"H_a337945941";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_ae0ea69cd3";a:3:{s:8:"fileName";s:13:"cm1/index.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:3;s:15:"_functionHeader";s:25:"function printContent()	{";}s:12:"H_2bf59c198a";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_75d4502a18";a:3:{s:8:"fileName";s:37:"cm1/class.tx_dkdstaticpublish_cm1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:5;s:15:"_functionHeader";s:26:"function moduleContent()	{";}s:12:"H_4d0d5ec2f2";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_75d4502a18";a:3:{s:8:"fileName";s:37:"cm1/class.tx_dkdstaticpublish_cm1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:6;s:15:"_functionHeader";s:30:"function f_publishSubpages() {";}s:12:"H_4bd44938db";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_75d4502a18";a:3:{s:8:"fileName";s:37:"cm1/class.tx_dkdstaticpublish_cm1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:6;s:15:"_functionHeader";s:31:"function f_previousReleases() {";}s:12:"H_294dfb8c6a";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_75d4502a18";a:3:{s:8:"fileName";s:37:"cm1/class.tx_dkdstaticpublish_cm1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:6;s:15:"_functionHeader";s:23:"function configForm() {";}s:12:"H_f44a77d756";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_75d4502a18";a:3:{s:8:"fileName";s:37:"cm1/class.tx_dkdstaticpublish_cm1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:7;s:15:"_functionHeader";s:52:"function makeExportLink( $id, $type, $attributes ) {";}s:12:"H_e0c34c3a2e";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_75d4502a18";a:3:{s:8:"fileName";s:37:"cm1/class.tx_dkdstaticpublish_cm1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:7;s:15:"_functionHeader";s:63:"function showTree( $treeStartingPoint, $scope='', $depth='' ) {";}s:12:"H_34ee0bf729";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_75d4502a18";a:3:{s:8:"fileName";s:37:"cm1/class.tx_dkdstaticpublish_cm1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:7;s:15:"_functionHeader";s:24:"function getReleases() {";}s:12:"H_2dbb61c0cd";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_75d4502a18";a:3:{s:8:"fileName";s:37:"cm1/class.tx_dkdstaticpublish_cm1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:6;s:15:"_functionHeader";s:36:"function deleteReleases( $relIDs ) {";}s:12:"H_1eaaf1f9e6";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_75d4502a18";a:3:{s:8:"fileName";s:37:"cm1/class.tx_dkdstaticpublish_cm1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:8;s:15:"_functionHeader";s:41:"function viewReleaseDetails($releaseID) {";}s:12:"H_79df528705";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_75d4502a18";a:3:{s:8:"fileName";s:37:"cm1/class.tx_dkdstaticpublish_cm1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:8;s:15:"_functionHeader";s:29:"function getLanguagesInDb() {";}s:12:"H_25806a7ca1";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:7;s:5:"TOTAL";i:7;}s:14:"MD5_75d4502a18";a:3:{s:8:"fileName";s:37:"cm1/class.tx_dkdstaticpublish_cm1.php";s:11:"objectUsage";i:7;s:5:"TOTAL";i:7;}s:24:"_searchtime_milliseconds";d:12;s:15:"_functionHeader";s:35:"function form_input(&$attributes) {";}s:12:"H_de70e0b2b7";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_75d4502a18";a:3:{s:8:"fileName";s:37:"cm1/class.tx_dkdstaticpublish_cm1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:13;s:15:"_functionHeader";s:48:"function form_select( &$attributes, &$options) {";}s:12:"H_c9a1cb91d1";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:3;s:5:"TOTAL";i:3;}s:14:"MD5_75d4502a18";a:3:{s:8:"fileName";s:37:"cm1/class.tx_dkdstaticpublish_cm1.php";s:11:"objectUsage";i:3;s:5:"TOTAL";i:3;}s:24:"_searchtime_milliseconds";d:8;s:15:"_functionHeader";s:63:"function form_checkBoxes( &$name, &$data, &$mapping, &$wrap ) {";}s:12:"H_10d01f465a";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_75d4502a18";a:3:{s:8:"fileName";s:37:"cm1/class.tx_dkdstaticpublish_cm1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:9;s:15:"_functionHeader";s:65:"function form_dropDown( &$name, &$opt, $selAttributes=array() ) {";}}}s:14:"MD5_e25a9df374";a:5:{s:8:"filename";s:51:"pi_xmlmenu/class.tx_dkdstaticpublish_pi_xmlmenu.php";s:8:"filesize";i:9444;s:6:"header";a:5:{s:4:"text";s:62:"
+
+Plugin 'XML Submenu' for the 'dkd_staticpublish' extension.
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}s:5:"other";a:1:{i:0;s:48:"@author	Thorsten Kahler <thorsten.kahler@dkd.de>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:40:"Thorsten Kahler <thorsten.kahler@dkd.de>";}}}s:3:"DAT";a:6:{i:1;a:7:{s:6:"header";s:59:"class tx_dkdstaticpublish_pi_xmlmenu extends tslib_pibase {";s:5:"class";i:1;s:11:"parentClass";s:30:"tx_dkdstaticpublish_pi_xmlmenu";s:7:"content";a:2:{i:0;s:259:"	var $prefixId = "tx_dkdstaticpublish_xmlmenu";		// Same as class name
+	var $scriptRelPath = "pi_xmlmenu/class.tx_dkdstaticpublish_xmlmenu.php";	// Path to this script relative to the extension dir.
+	var $extKey = "dkd_staticpublish";	// The extension key.
+
+	";i:1;i:-1;}s:12:"content_size";i:259;s:13:"content_lines";i:4;s:6:"atLine";i:35;}i:3;a:7:{s:6:"header";s:31:"function main($content,$conf)	{";s:11:"parentClass";s:30:"tx_dkdstaticpublish_pi_xmlmenu";s:4:"cDat";a:3:{s:4:"text";s:29:"
+
+[Put your description here]";s:5:"param";a:2:{i:0;a:2:{i:0;s:6:"[type]";i:1;s:13:"$content: ...";}i:1;a:2:{i:0;s:6:"[type]";i:1;s:10:"$conf: ...";}}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}}s:7:"content";a:2:{i:0;s:507:"
+		$this->conf = &$conf;
+
+			// send HTTP header for content-type?
+		if( $this->conf['sendXMLHeader'] ) {
+			header('Content-type: text/xml');
+		}
+
+			// Get the PID from which to make the menu.
+			// If a page is set as reference in the 'Startingpoint' field, use that
+			// Otherwise use the current page's id-number from TSFE
+		$menuPid = trim($this->piVars['menuPid']) ==
+[...]
+ist
+			);
+
+		}
+
+		$totalMenu = implode( "\n\t", $pages );
+		return sprintf( "\n<pages>\n%s\n</pages>\n", $totalMenu );
+	}
+
+
+	";i:1;i:1;}s:12:"content_size";i:4050;s:13:"content_lines";i:126;s:6:"atLine";i:47;}i:5;a:7:{s:6:"header";s:37:"function getSubpages($pid, $levels) {";s:11:"parentClass";s:30:"tx_dkdstaticpublish_pi_xmlmenu";s:4:"cDat";a:5:{s:4:"text";s:66:"
+
+This function accumulates recursively all pages within a branch
+";s:5:"param";a:2:{i:0;a:2:{i:0;s:6:"[type]";i:1;s:9:"$pid: ...";}i:1;a:2:{i:0;s:6:"[type]";i:1;s:12:"$levels: ...";}}s:6:"return";a:2:{i:0;s:5:"array";i:1;s:37:"array of data sets from table "pages"";}s:5:"other";a:2:{i:0;s:43:"@params	int	$pid identifies the branch root";i:1;s:49:"@params	int	$levels	restricts the recursion depth";}s:11:"other_index";a:1:{s:7:"@params";a:2:{i:0;s:35:"int $pid identifies the branch root";i:1;s:41:"int $levels	restricts the recursion depth";}}}s:7:"content";a:2:{i:0;s:426:"
+		$pages = array();
+
+			// (Function getMenu() is found in class.t3lib_page.php)
+		if( $levels > 0 ) {
+			$pages = $GLOBALS['TSFE']->sys_page->getMenu($pid);
+			if( count($pages) > 0 ) {
+				$temp_pages = array();
+				foreach( $pages as $p ) {
+					$temp_pages = array_merge( $temp_pages, $this->getSubPages( $p['uid'], $levels-1 ) );
+				}
+				$pages = array_merge( $pages, $temp_pages );
+			}
+		}
+
+		return $pages;
+	}
+
+
+
+
+	";i:1;i:0;}s:12:"content_size";i:426;s:13:"content_lines";i:21;s:6:"atLine";i:183;}i:7;a:7:{s:6:"header";s:39:"function checkPageAccess(&$pageArray) {";s:11:"parentClass";s:30:"tx_dkdstaticpublish_pi_xmlmenu";s:4:"cDat";a:3:{s:4:"text";s:67:"
+
+This method checks if a page is "accessible" for normal FE users
+";s:5:"param";a:1:{i:0;a:2:{i:0;s:5:"Array";i:1;s:53:"$pageArray	data set from table pages that is to check";}}s:6:"return";a:2:{i:0;s:4:"bool";i:1;s:17:"page accessiblity";}}s:7:"content";a:2:{i:0;s:273:"
+		$access = false;
+
+			// just a simple check at the moment, could be enhanced via TS
+		$doktypes = $GLOBALS['TYPO3_CONF_VARS']['FE']['content_doktypes'].',4';
+		if( t3lib_div::inList( $doktypes, $pageArray['doktype'] ) ) {
+			$access = true;
+		}
+
+		return $access;
+	}
+
+
+	";i:1;i:0;}s:12:"content_size";i:273;s:13:"content_lines";i:13;s:6:"atLine";i:211;}i:9;a:4:{s:6:"header";s:40:"function getTranslationsOfPage(&$page) {";s:11:"parentClass";s:30:"tx_dkdstaticpublish_pi_xmlmenu";s:4:"cDat";a:3:{s:4:"text";s:37:"
+
+	Search for translations of a page
+";s:5:"param";a:1:{i:0;a:2:{i:0;s:5:"array";i:1;s:33:"$page	data set from table "pages"";}}s:6:"return";a:2:{i:0;s:5:"array";i:1;s:21:"array of language IDs";}}s:6:"atLine";i:231;}i:11;a:7:{s:6:"header";s:82:"function getPiVarsArray( $varName, $separator=',', $default='', $constraint='' ) {";s:11:"parentClass";s:30:"tx_dkdstaticpublish_pi_xmlmenu";s:4:"cDat";a:5:{s:4:"text";s:339:"
+
+Parse a piVar and try to return them as an array
+
+With this function it's possible to use arrays as well as
+comma/semicolon/...-separated values as piVar
+You may optionally set a list of default values to add ( as far as it
+isn't already done by tslib_pibase::pi_setPiVarDefaults() ). Further
+you can restrict the piVars to a given set.
+";s:5:"param";a:4:{i:0;a:2:{i:0;s:6:"[type]";i:1;s:14:"$$varName: ...";}i:1;a:2:{i:0;s:6:"[type]";i:1;s:15:"$separator: ...";}i:2;a:2:{i:0;s:6:"[type]";i:1;s:13:"$default: ...";}i:3;a:2:{i:0;s:6:"[type]";i:1;s:16:"$constraint: ...";}}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}s:5:"other";a:4:{i:0;s:41:"@params	string	$varName name of the piVar";i:1;s:49:"@params	string	$separator used to explode strings";i:2;s:46:"@params	array	$default array of default values";i:3;s:70:"@params	array	$constraint restricts piVars to a set of possible values";}s:11:"other_index";a:1:{s:7:"@params";a:4:{i:0;s:33:"string $varName name of the piVar";i:1;s:41:"string $separator used to explode strings";i:2;s:38:"array $default array of default values";i:3;s:62:"array $constraint restricts piVars to a set of possible values";}}}s:7:"content";a:2:{i:0;s:507:"
+		$array = array();		// array of parsed and valid piVar values
+		$tempArray = array();		// array for temporary storage of values
+
+			// if there's no piVar of this name, return an empty array
+		if( ! isset( $this->piVars[$varName] ) ) {
+			if ( is_array($default) ) {
+				return $default;
+			} else {
+				return array();
+			}
+		}
+
+			// change string to array if necessary
+	
+[...]
+e($TYPO3_CONF_VARS[TYPO3_MODE]["XCLASS"]["ext/dkd_staticpublish/pi_xmlmenu/class.tx_dkdstaticpublish_pi_xmlmenu.php"]);
+}
+
+?>";i:1;i:1;}s:12:"content_size";i:1192;s:13:"content_lines";i:46;s:6:"atLine";i:266;}}s:10:"usageCount";a:6:{s:12:"H_4af7a90cc6";a:2:{s:24:"_searchtime_milliseconds";d:37;s:15:"_functionHeader";s:59:"class tx_dkdstaticpublish_pi_xmlmenu extends tslib_pibase {";}s:12:"H_e8476b0991";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_ae0ea69cd3";a:3:{s:8:"fileName";s:13:"cm1/index.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:4;s:15:"_functionHeader";s:31:"function main($content,$conf)	{";}s:12:"H_b5920a383d";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:3;s:5:"TOTAL";i:3;}s:14:"MD5_e25a9df374";a:3:{s:8:"fileName";s:51:"pi_xmlmenu/class.tx_dkdstaticpublish_pi_xmlmenu.php";s:11:"objectUsage";i:3;s:5:"TOTAL";i:3;}s:24:"_searchtime_milliseconds";d:6;s:15:"_functionHeader";s:37:"function getSubpages($pid, $levels) {";}s:12:"H_df711c18e1";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_e25a9df374";a:3:{s:8:"fileName";s:51:"pi_xmlmenu/class.tx_dkdstaticpublish_pi_xmlmenu.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:5;s:15:"_functionHeader";s:39:"function checkPageAccess(&$pageArray) {";}s:12:"H_7b3ee282c4";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:2;s:5:"TOTAL";i:2;}s:14:"MD5_e25a9df374";a:3:{s:8:"fileName";s:51:"pi_xmlmenu/class.tx_dkdstaticpublish_pi_xmlmenu.php";s:11:"objectUsage";i:2;s:5:"TOTAL";i:2;}s:24:"_searchtime_milliseconds";d:6;s:15:"_functionHeader";s:40:"function getTranslationsOfPage(&$page) {";}s:12:"H_cb7209ee83";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:2;s:5:"TOTAL";i:2;}s:14:"MD5_e25a9df374";a:3:{s:8:"fileName";s:51:"pi_xmlmenu/class.tx_dkdstaticpublish_pi_xmlmenu.php";s:11:"objectUsage";i:2;s:5:"TOTAL";i:2;}s:24:"_searchtime_milliseconds";d:5;s:15:"_functionHeader";s:82:"function getPiVarsArray( $varName, $separator=',', $default='', $constraint='' ) {";}}}}}

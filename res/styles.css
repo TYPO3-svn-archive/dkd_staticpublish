@@ -1,0 +1,48 @@
+/**
+ *$Id$
+ */	
+
+h4 {
+	margin-top: 1em;
+}
+
+p {
+	margin: 10px 0;
+}
+
+.err {
+	color: red;
+}
+
+
+.translucent {
+	background-color: transparent;
+}
+
+ul.selection-list {
+	margin: 0;
+	list-style-type: none;
+	width: 60%;
+	line-height: 1.4em;
+}
+
+ul.selection-list input[type="checkbox"]{
+	text-align: right;
+	margin: 0 5px;
+}
+
+table.pageTree {
+	margin: 10px;
+}
+table.pageTree img {
+	vertical-align: middle;
+}
+
+table.releaseList {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+table.releaseList td, table.releaseList th {
+	padding: 2px;
+	border: 1px dashed #9BA1A8;
+}
