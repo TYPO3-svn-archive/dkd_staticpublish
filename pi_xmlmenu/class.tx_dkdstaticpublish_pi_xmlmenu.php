@@ -130,10 +130,7 @@ class tx_dkdstaticpublish_pi_xmlmenu extends tslib_pibase {
 			$urls[] = htmlspecialchars( $this->pi_getPageLink( $pages_row['uid'] ) );
 
 				// checking for quotes in page title
-			$titleAttribute = sprintf(
-				'title="%s"',
-				strstr( $title, '"' ) ? htmlspecialchars($title) : $title
-			);
+			$titleAttribute = sprintf( 'title="%s"', htmlspecialchars($title) );
 
 				// Travere page types
 			foreach( $pageTypes as $typeNum ) {
