@@ -1,9 +1,13 @@
-2006-09-06	Thorsten Kahler <thorsten.kahler@dkd.de>
+
+Revision: $Id$
+
+2006-09-06  Thorsten Kahler  <thorsten.kahler@dkd.de>
+
+	* Removed unused module function from Web > Functions
+	* Reformatted ChangeLog file
+
+
+2006-09-06  Thorsten Kahler  <thorsten.kahler@dkd.de>
 	* added ChangeLog file
 	* pi_xmlmenu: method main() uses htmlspecialchars to encode page titles generally
 	* cm1: finding the switchToModLink made easier
-
-
------------------------------------------------------------
-
-Revision: $Id: $
