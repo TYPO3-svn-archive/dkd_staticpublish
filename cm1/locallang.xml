@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<!--
+  - @revision $Id$
+  -->
+<T3locallang>
+<meta type="array">
+	<description>Language labels for dkd_staticpublish module cm1</description>
+	<type>module</type>
+	<csh_table></csh_table>
+	<labelContext type="array">
+	</labelContext>
+</meta>
+<data type="array">
+	<languageKey index="default" type="array">
+			<label index="title">Publish subpages</label>
+			<label index="function1">Publish subpages</label>
+			<label index="function2">Previous Releases</label>
+			<label index="error_header">Error</label>
+			<label index="error_rootpage">It's not possible to start publication from the root page!</label>
+			<label index="error_access">You don't have sufficient rights to start a publication from this page.</label>
+			<label index="header_config">Configuration</label>
+			<label index="msg_config">Hier kÃ¶nnen Sie Seitentypen und Sprachen auswÃ¤hlen, die ausgegeben werden sollen</label>
+			<label index="header_cbPageTypes">Page Types</label>
+			<label index="header_cbLanguages">Languages</label>
+			<label index="header_scope">Scope</label>
+			<label index="msg_scope">Select the pages to be published:</label>
+			<label index="lbl_scope_sub">only subpages</label>
+			<label index="lbl_scope_single">only this page</label>
+			<label index="lbl_scope_all">this page and subpages</label>
+			<label index="header_ready">Proceed?</label>
+			<label index="msg_ready">Finished configuring the export</label>
+			<label index="header_switchToMod">Switch to Export Module</label>
+			<label index="msg_switchToMod">The following link will take you to another BE module, which will write the HTML files to be exported into a database table.</label>
+			<label index="msg_switchToModLink">&lt;strong&gt;Use this configuration!&lt;/strong&gt;</label>
+			<label index="PR_header">Previous Releases</label>
+			<label index="PR_comment">This is a list of previous releases that started from this page. You can mark and delete data which isn't required any more.</label>
+			<label index="PR_delButton">Delete selected publications</label>
+			<label index="PR_tblHead_date">Date/Time</label>
+			<label index="PR_tblHead_sum">Number of URLs</label>
+			<label index="PR_tblHead_del">Delete?</label>
+			<label index="PR_tblHead_view">Singleview</label>
+			<label index="PR_singleLink">show</label>
+			<label index="PR_tblHead_pageTitle">Seitentitel</label>
+			<label index="PR_tblHead_url">URL / Path</label>
+			<label index="PR_singleView_header">Details fÃ¼r the publication from %s at %s</label>
+			<label index="PR_singleView_dateFormat">%m/%d/%y</label>
+			<label index="PR_singleView_timeFormat">%H:%M:%S</label>
+	</languageKey>
+</data>
+<orig_hash type="array">
+	<languageKey index="default" type="array">
+			<label index="title" type="integer">93015061</label>
+			<label index="function1" type="integer">93015061</label>
+			<label index="function2" type="integer">157810151</label>
+			<label index="error_header" type="integer">151171285</label>
+			<label index="error_rootpage" type="integer">14371057</label>
+			<label index="error_access" type="integer">180927475</label>
+			<label index="header_config" type="integer">39122498</label>
+			<label index="msg_config" type="integer">152469867</label>
+			<label index="header_cbPageTypes" type="integer">16025266</label>
+			<label index="header_cbLanguages" type="integer">60853806</label>
+			<label index="header_scope" type="integer">97588210</label>
+			<label index="msg_scope" type="integer">99201687</label>
+			<label index="lbl_scope_sub" type="integer">193964844</label>
+			<label index="lbl_scope_single" type="integer">42976652</label>
+			<label index="lbl_scope_all" type="integer">71171293</label>
+			<label index="header_ready" type="integer">141776403</label>
+			<label index="msg_ready" type="integer">256640696</label>
+			<label index="header_switchToMod" type="integer">175809061</label>
+			<label index="msg_switchToMod" type="integer">207086943</label>
+			<label index="msg_switchToModLink" type="integer">257103961</label>
+			<label index="PR_header" type="integer">157810151</label>
+			<label index="PR_comment" type="integer">260149667</label>
+			<label index="PR_delButton" type="integer">370811</label>
+			<label index="PR_tblHead_date" type="integer">128735770</label>
+			<label index="PR_tblHead_sum" type="integer">72815218</label>
+			<label index="PR_tblHead_del" type="integer">126264319</label>
+			<label index="PR_tblHead_view" type="integer">123372338</label>
+			<label index="PR_singleLink" type="integer">176017707</label>
+			<label index="PR_tblHead_pageTitle" type="integer">146786015</label>
+			<label index="PR_tblHead_url" type="integer">235371022</label>
+			<label index="PR_singleView_header" type="integer">223910491</label>
+			<label index="PR_singleView_dateFormat" type="integer">57604899</label>
+			<label index="PR_singleView_timeFormat" type="integer">113901945</label>
+		</languageKey>
+	</orig_hash>
+	<orig_text type="array">
+		<languageKey index="default" type="array">
+		</languageKey>
+	</orig_text>
+</T3locallang>

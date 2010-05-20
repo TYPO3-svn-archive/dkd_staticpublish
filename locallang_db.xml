@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<!--
+  - @revision $Id$
+  -->
+<T3locallang>
+    <meta type="array">
+        <description>Language labels for database tables/fields belonging to extension &quot;dkd_staticpublish&quot;</description>
+        <type>database</type>
+        <csh_table></csh_table>
+        <labelContext type="array">
+        </labelContext>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="tx_dkdstaticpublish_urls">Static Publish Cache</label>
+            <label index="tx_dkdstaticpublish_urls.hidden">not for FE display</label>
+            <label index="tx_dkdstaticpublish_urls.pub_id">Publishing ID</label>
+            <label index="tx_dkdstaticpublish_urls.title">Page Title</label>
+            <label index="tx_dkdstaticpublish_urls.orig_pid">Page ID</label>
+            <label index="tx_dkdstaticpublish_urls.url">URL</label>
+            <label index="tt_content.menu_type_xmlmenu">XML Submenu</label>
+        </languageKey>
+        <languageKey index="de" type="array">
+            <label index="tx_dkdstaticpublish_urls">Static Publish-Cache</label>
+            <label index="tx_dkdstaticpublish_urls.hidden">nicht für FE-Anzeige</label>
+            <label index="tx_dkdstaticpublish_urls.pub_id">Veröffentlichungs-ID</label>
+            <label index="tx_dkdstaticpublish_urls.title">Seitentitel</label>
+            <label index="tx_dkdstaticpublish_urls.orig_pid">Seiten-ID</label>
+            <label index="tx_dkdstaticpublish_urls.url">URL</label>
+            <label index="tt_content.menu_type_xmlmenu">XML Untermenü</label>
+        </languageKey>
+    </data>
+    <orig_hash type="array">
+        <languageKey index="default" type="array">
+            <label index="tx_dkdstaticpublish_urls" type="integer">252505617</label>
+            <label index="tx_dkdstaticpublish_urls.hidden" type="integer">211217254</label>
+            <label index="tx_dkdstaticpublish_urls.pub_id" type="integer">158762272</label>
+            <label index="tx_dkdstaticpublish_urls.title" type="integer">42353938</label>
+            <label index="tx_dkdstaticpublish_urls.orig_pid" type="integer">50799274</label>
+            <label index="tx_dkdstaticpublish_urls.url" type="integer">241907994</label>
+            <label index="tt_content.menu_type_xmlmenu" type="integer">86591449</label>
+        </languageKey>
+        <languageKey index="de" type="array">
+            <label index="tx_dkdstaticpublish_urls" type="integer">252505617</label>
+            <label index="tx_dkdstaticpublish_urls.hidden" type="integer">211217254</label>
+            <label index="tx_dkdstaticpublish_urls.pub_id" type="integer">158762272</label>
+            <label index="tx_dkdstaticpublish_urls.title" type="integer">42353938</label>
+            <label index="tx_dkdstaticpublish_urls.orig_pid" type="integer">50799274</label>
+            <label index="tx_dkdstaticpublish_urls.url" type="integer">241907994</label>
+            <label index="tt_content.menu_type_xmlmenu" type="integer">86591449</label>
+        </languageKey>
+    </orig_hash>
+    <orig_text type="array">
+        <languageKey index="default" type="array">
+        </languageKey>
+        <languageKey index="de" type="array">
+        </languageKey>
+    </orig_text>
+</T3locallang>

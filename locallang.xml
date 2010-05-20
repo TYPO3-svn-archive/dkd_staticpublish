@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<!--
+  - @revision $Id$
+  -->
+<T3locallang>
+	<meta type="array">
+		<description>Language labels for extension &quot;dkd_staticpublish&quot;</description>
+		<type>module</type>
+		<csh_table></csh_table>
+		<fileId>EXT:dkd_staticpublish/locallang.xml</fileId>
+		<labelContext type="array">
+			<label index="cm1_title"></label>
+		</labelContext>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+				<label index="cm1_title">Publish subpages</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="cm1_title">Unterseiten veröffentlichen</label>
+		</languageKey>
+	</data>
+	<orig_hash type="array">
+		<languageKey index="default" type="array">
+			<label index="cm1_title" type="integer">93015061</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="cm1_title" type="integer">93015061</label>
+		</languageKey>
+	</orig_hash>
+	<orig_text type="array">
+		<languageKey index="default" type="array">
+		</languageKey>
+		<languageKey index="de" type="array">
+		</languageKey>
+	</orig_text>
+</T3locallang>

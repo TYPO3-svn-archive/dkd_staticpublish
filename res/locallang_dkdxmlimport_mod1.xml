@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<!--
+  - @revision	$Id$
+  -->
+<T3locallang>
+    <meta type="array">
+        <description>Language labels for module &quot;web_txdkdxmlimportM1&quot;</description>
+        <type>module</type>
+        <csh_table></csh_table>
+        <labelContext type="array">
+        </labelContext>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="title">XML-Publish</label>
+            <label index="function1">Import XML Data</label>
+            <label index="function2">Export Files</label>
+            <label index="function3">Publications Overview</label>
+            <label index="importXML_conf_header">The import of the HTML pages to be exported was done using the following configuration.</label>
+            <label index="importXML_conf_hint">&lt;em&gt;Configuration:&lt;/em&gt;</label>
+            <label index="importXML_backLink">Reset configuration</label>
+            <label index="importXML_buttonSelect">Select</label>
+            <label index="importXML_buttonImport">Import</label>
+            <label index="importXML_currentConfig">Current Settings for import</label>
+            <label index="importXML_pidMsg">Export from page</label>
+            <label index="importXML_msg_noUrl">No URL defined for import.</label>
+            <label index="importPics_header">Export: File(DB) -&gt; File</label>
+            <label index="importPics_conf_header">Select the setting you want to use for the file export</label>
+            <label index="importPics_conf_hint">&lt;em&gt;Hint:&lt;/em&gt;As the export of the HTML files may exceed the max. runtime of this script, the HTML files are exported step-by-step</label>
+            <label index="importPics_noPics">There is no file-export defined for the record sets in this table!</label>
+            <label index="importPics_currentSettings">Current settings for the export</label>
+            <label index="importPics_url">&lt;p&gt;This is the url where the files are stored for export:&lt;br&gt;&lt;em&gt;%s&lt;/em&gt;&lt;/p&gt;</label>
+            <label index="importPics_placeholder_fieldVal">&amp;lt;DB-fieldcontent&amp;gt;</label>
+            <label index="importPics_pids_head">Export HTML files related to records on which page?</label>
+            <label index="importPics_pids_all">all</label>
+            <label index="importPics_pic_count">%u HTML files have been exported in this step.</label>
+            <label index="importPics_step">Begin / continue export at record </label>
+            <label index="importPics_completed_msg">Export of %2$u HTML files from %1$u records completed</label>
+            <label index="pubID_dateFormat">%m/%d/%y %H:%M:%S</label>
+        </languageKey>
+    </data>
+    <orig_hash type="array">
+        <languageKey index="default" type="array">
+            <label index="title" type="integer">16929949</label>
+            <label index="function1" type="integer">79571785</label>
+            <label index="function2" type="integer">262825885</label>
+            <label index="function3" type="integer">177585084</label>
+            <label index="importXML_conf_header" type="integer">118714196</label>
+            <label index="importXML_conf_hint" type="integer">17273425</label>
+            <label index="importXML_backLink" type="integer">182432940</label>
+            <label index="importXML_buttonSelect" type="integer">235284002</label>
+            <label index="importXML_buttonImport" type="integer">120417658</label>
+            <label index="importXML_currentConfig" type="integer">264108138</label>
+            <label index="importXML_pidMsg" type="integer">107396790</label>
+            <label index="importXML_msg_noUrl" type="integer">189209364</label>
+            <label index="importPics_header" type="integer">75012997</label>
+            <label index="importPics_conf_header" type="integer">82257887</label>
+            <label index="importPics_conf_hint" type="integer">6376068</label>
+            <label index="importPics_noPics" type="integer">251260488</label>
+            <label index="importPics_currentSettings" type="integer">82781792</label>
+            <label index="importPics_url" type="integer">163205811</label>
+            <label index="importPics_placeholder_fieldVal" type="integer">163940304</label>
+            <label index="importPics_pids_head" type="integer">243996437</label>
+            <label index="importPics_pids_all" type="integer">169351776</label>
+            <label index="importPics_pic_count" type="integer">174146379</label>
+            <label index="importPics_step" type="integer">79630360</label>
+            <label index="importPics_completed_msg" type="integer">44489369</label>
+            <label index="pubID_dateFormat" type="integer">234883454</label>
+        </languageKey>
+    </orig_hash>
+    <orig_text type="array">
+        <languageKey index="default" type="array">
+        </languageKey>
+    </orig_text>
+</T3locallang>

@@ -5,6 +5,7 @@ Revision: $Id$
 
 	* Removed unused module function from Web > Functions
 	* Reformatted ChangeLog file
+	* Transformed locallang files from PHP to XML format
 
 
 2006-09-06  Thorsten Kahler  <thorsten.kahler@dkd.de>
