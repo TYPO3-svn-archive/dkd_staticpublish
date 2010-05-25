@@ -44,7 +44,7 @@ class tx_dkdstaticpublish_pi_xmlmenu extends tslib_pibase {
 	 */
 	function main($content,$conf)	{
 
-		$this->conf = &$conf;
+		$this->conf = $conf;
 
 			// send HTTP header for content-type?
 		if( $this->conf['sendXMLHeader'] ) {
@@ -118,13 +118,13 @@ class tx_dkdstaticpublish_pi_xmlmenu extends tslib_pibase {
 
 				// check which translations of the page should be used
 			if( $all_languages ) {
-				$languages +=  $this->getTranslationsOfPage(&$pages_row);
+				$languages +=  $this->getTranslationsOfPage($pages_row);
 			} else {
-				$languages += array_intersect( $selectedLanguages, $this->getTranslationsOfPage(&$pages_row) );
+				$languages += array_intersect( $selectedLanguages, $this->getTranslationsOfPage($pages_row) );
 			}
 
 				// check accessibility
-			$access = $this->checkPageAccess(&$pages_row) ? 1 : 0;
+			$access = $this->checkPageAccess($pages_row) ? 1 : 0;
 
 				// Firs add a link to the default page type and language
 			$urls[] = htmlspecialchars( $this->pi_getPageLink( $pages_row['uid'] ) );
@@ -208,10 +208,10 @@ class tx_dkdstaticpublish_pi_xmlmenu extends tslib_pibase {
 	/**
 	 * This method checks if a page is "accessible" for normal FE users
 	 *
-	 * @param	Array	$pageArray	data set from table pages that is to check
+	 * @param	Array	the "pages" record to check
 	 * @return	bool	page accessiblity
 	 */
-	function checkPageAccess(&$pageArray) {
+	function checkPageAccess($pageArray) {
 
 		$access = false;
 
@@ -228,10 +228,10 @@ class tx_dkdstaticpublish_pi_xmlmenu extends tslib_pibase {
 	/**
 	 *	Search for translations of a page
 	 *
-	 *	@param	array	$page	data set from table "pages"
+	 *	@param	array	record from "pages" table
 	 *	@return	array	array of language IDs
 	 */
-	function getTranslationsOfPage(&$page) {
+	function getTranslationsOfPage($page) {
 		$languages = array();
 		$queryArray = array(
 			'SELECT' => 'distinct sys_language_uid l',
@@ -294,7 +294,7 @@ class tx_dkdstaticpublish_pi_xmlmenu extends tslib_pibase {
 				}
 			}
 		} else {
-			$array = &$tempArray;
+			$array = $tempArray;
 		}
 
 		return $array;
