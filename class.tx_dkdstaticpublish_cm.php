@@ -44,7 +44,7 @@ class tx_dkdstaticpublish_cm {
 	 *  
 	 *
 	 */ 
-	function main(&$backRef,$menuItems,$table,$uid) {
+	function main($backRef,$menuItems,$table,$uid) {
 	
 			// enable dev logging if set
 		if( is_array( $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_div.php']['devLog'] ) || TYPO3_DLOG ) {
@@ -65,7 +65,7 @@ class tx_dkdstaticpublish_cm {
 			}
 
 				// Adds the regular item:
-			$LL = $this->includeLL();
+			$this->includeLL();
 			
 				// initialize preset configurations 
 			$this->initPreConf($uid);
@@ -73,7 +73,7 @@ class tx_dkdstaticpublish_cm {
 				// Remember to add entries in the localconf.php file for additional titles. 
 			
 			if( count( $this->preConf ) ) { 
-				$label = $GLOBALS['LANG']->getLLL( 'cm1_title',$LL );
+				$label = $GLOBALS['LANG']->getLL('cm1_title');
 	
 				foreach( $this->preConf as $conf ) {
 						// use $conf['label'] as linked text and throw it away afterwards
@@ -132,13 +132,12 @@ class tx_dkdstaticpublish_cm {
 
 
 	/** 
-	 * Includes the [extDir]/locallang.php and returns the $LOCAL_LANG array found in that file.
+	 * Loads the language labels from file locallang.xml
 	 *
-	 * @return  array   language labels 
+	 * @return	void
 	 */ 
-	function includeLL()    {
-		include(t3lib_extMgm::extPath('dkd_staticpublish').'locallang.php');
-		return $LOCAL_LANG; 
+	function includeLL() {
+		$GLOBALS['LANG']->includeLLFile('EXT:dkd_staticpublish/locallang.xml');
 	}
 
 
