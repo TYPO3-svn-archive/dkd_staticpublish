@@ -37,7 +37,7 @@ t3lib_extMgm::addUserTSConfig('
 $TYPO3_CONF_VARS['BE']['XCLASS']['ext/dkd_xmlimport/class.tx_dkdxml_importer.php'] = t3lib_extMgm::extPath( 'dkd_staticpublish', 'class.ux_tx_dkdxml_importer.php' );
 
 $TYPO3_CONF_VARS['BE']['XCLASS']['ext/dkd_xmlimport/mod1/class.tx_dkdxml_impexp.php'] = t3lib_extMgm::extPath( 'dkd_staticpublish', 'class.ux_tx_dkdxml_impexp.php' );
-$TYPO3_CONF_VARS['BE']['XLLfile']['EXT:dkd_xmlimport/mod1/locallang.php'] = 'EXT:dkd_staticpublish/res/dkdxmlimport_mod1_locallang.php';
+$TYPO3_CONF_VARS['BE']['XLLfile']['EXT:dkd_xmlimport/mod1/locallang.php'] = 'EXT:dkd_staticpublish/res/locallang_dkdxmlimport_mod1.xml';
 
 t3lib_extMgm::addPItoST43($_EXTKEY,'pi_xmlmenu/class.tx_dkdstaticpublish_pi_xmlmenu.php','_pi_xmlmenu','menu_type',0);
 ?>
