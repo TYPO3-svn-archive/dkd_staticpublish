@@ -32,7 +32,7 @@
  */
 
 
-class ux_tx_dkdxml_importer extends tx_dkdxml_importer{
+class ux_tx_dkdxml_importer extends tx_dkdxml_importer {
 
 
 	function assocArray2Table($assoc){
@@ -41,31 +41,27 @@ class ux_tx_dkdxml_importer extends tx_dkdxml_importer{
 
 		if( is_array( $assoc['pages'] ) && count( $assoc['pages'] ) ) {
 
-			$pages = &$assoc['pages'];
-
-			foreach( $pages as $page ) {
+			foreach ($assoc['pages'] as $page) {
 				$rows = array();
 				if( is_array( $page ) ) {
 					$commonAttributes = array();
 					$keys = array_keys ($page);
-					foreach( $keys as $key ) {
-						if( is_int($key) ) {
+						// extract language variants and attach common properties to them
+					foreach ($keys as $key) {
+						if(is_int($key)) {	// language variant
 							$tag = $page[$key];
 							$rows[] = array( $tag['tag'] => $tag['value'] );
-						} else {
-							$commonAttributes[$key] = $page[$key];
+							unset($page[$key]);
 						}
 					}
-					array_walk( $rows, create_function( '&$row,$index,&$common', '$row = array_merge( $common, $row );' ), $commonAttributes );
-
-					$table = array_merge( $table, $rows );
+					foreach ($rows as $row) {
+						$table[] = array_merge($page, $row);
+					}
 				}
 			}
 
 		}
 
-
-//debug( array( 'assoc' => $assoc, 'table' => $table ) );
 		return $table;
 	}
 
