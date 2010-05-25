@@ -736,7 +736,7 @@ class tx_dkdstaticpublish_cm1 extends t3lib_SCbase {
 		);
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECT_queryArray( $queryArray );
 		while( $row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res) ) {
-			$languages[] = $row;
+			$languages[$row['langID']] = $row;
 		}
 		return $languages;
 	}
