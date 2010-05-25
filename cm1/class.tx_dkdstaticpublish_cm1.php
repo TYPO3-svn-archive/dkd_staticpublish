@@ -62,7 +62,7 @@ class tx_dkdstaticpublish_cm1 extends t3lib_SCbase {
 	 * @return	void
 	 * @see menuConfig()
 	 */
-	function init()	{
+	function init() {
 		parent::init();
 
 			// set the permissions clause publishing function
@@ -80,7 +80,7 @@ class tx_dkdstaticpublish_cm1 extends t3lib_SCbase {
 		$this->tmpl->forceTemplateParsing = 1;
 		$this->tmpl->start($rootline);
 		
-		$this->modVars = &$this->fetchVars();
+		$this->modVars = $this->fetchVars();
 
 	}
 
@@ -89,7 +89,7 @@ class tx_dkdstaticpublish_cm1 extends t3lib_SCbase {
 	/**
 	 * Adds items to the ->MOD_MENU array. Used for the function menu selector.
 	 */
-	function menuConfig()	{
+	function menuConfig() {
 		$this->MOD_MENU = Array (
 			'function' => Array (
 				'1' => $GLOBALS['LANG']->getLL('function1'),
@@ -106,7 +106,7 @@ class tx_dkdstaticpublish_cm1 extends t3lib_SCbase {
 	 *
 	 * @return	array	the modVars
 	 */
-	function &fetchVars() {
+	function fetchVars() {
 			// initialize the vars
 		$modVars = array(
 			'pageTypes' => array(),
@@ -148,12 +148,10 @@ class tx_dkdstaticpublish_cm1 extends t3lib_SCbase {
 	/**
 	 * Main function of the module. Write the content to $this->content
 	 */
-	function main()	{
-		global $BE_USER,$BACK_PATH,$TCA_DESCR,$TCA,$CLIENT,$TYPO3_CONF_VARS;
-		
+	function main() {
 			// Draw the header.
 		$this->doc = t3lib_div::makeInstance('mediumDoc');
-		$this->doc->backPath = $BACK_PATH;
+		$this->doc->backPath = $GLOBALS['BACK_PATH'];
 		$this->doc->docType = 'xhtml_trans';
 		$this->doc->form='<form action="index.php" method="POST">';
 
@@ -179,35 +177,43 @@ class tx_dkdstaticpublish_cm1 extends t3lib_SCbase {
 
 		$access = ( is_array( $this->pageinfo )  && is_array( $page ) );
 
-		if ( $this->id && $access )	{
+		if (! ($this->id && $access )) {
+			$this->content .= $this->_showAcessError();
+		} else {
 
-			$headerSection = $this->doc->getHeader('pages',$this->pageinfo,$this->pageinfo['_thePath']).'<br>'.$GLOBALS['LANG']->sL('LLL:EXT:lang/locallang_core.php:labels.path').': '.t3lib_div::fixed_lgd_pre($this->pageinfo['_thePath'],50);
-			$this->content.=$this->doc->section('',$this->doc->funcMenu($headerSection,t3lib_BEfunc::getFuncMenu($this->id,'SET[function]',$this->MOD_SETTINGS['function'],$this->MOD_MENU['function'])));
-			$this->content.=$this->doc->divider(5);
-				
-			// Render content:
-			$this->moduleContent();
+			$headerSection = $this->doc->getHeader(
+				'pages'
+				,$this->pageinfo
+				,$this->pageinfo['_thePath']
+			);
+			$headerSection .= '<br>'
+				. $GLOBALS['LANG']->sL('LLL:EXT:lang/locallang_core.php:labels.path')
+				. ': ' . t3lib_div::fixed_lgd_pre($this->pageinfo['_thePath'], 50);
 			
-			// ShortCut
-			if ($BE_USER->mayMakeShortcut())	{
+			$this->content .= $this->doc->section(
+				''
+				,$this->doc->funcMenu(
+					$headerSection
+					,t3lib_BEfunc::getFuncMenu(
+						$this->id
+						,'SET[function]'
+						,$this->MOD_SETTINGS['function']
+						,$this->MOD_MENU['function']
+					)
+				)
+			);
+			$this->content .= $this->doc->divider(5);
+
+				// Render content:
+			$this->moduleContent();
+
+				// Shortcut
+			if ($GLOBALS['BE_USER']->mayMakeShortcut())	{
 				$this->content.=$this->doc->spacer(20).$this->doc->section('',$this->doc->makeShortcutIcon('id',implode(',',array_keys($this->MOD_MENU)),$this->MCONF['name']));
 			}
-			
-		} else {
-				// access/rights error
-			$this->content .= $this->doc->sectionHeader($GLOBALS['LANG']->getLL( 'error_header' ), 1);			
-			if( $this->id == 0 ){
-					// no publishing from the root page
-				$msg .= $GLOBALS['LANG']->getLL( 'error_rootpage' );
-			} else {
-					// user has insufficient rights to publish this page
-				$msg .= $GLOBALS['LANG']->getLL( 'error_access' );
-			}
-			$this->content .= '<p class="err">' . $msg . '</p>';
-			$this->content.=$this->doc->divider(5);
-			$this->content .= '<a href="javascript:history.back();" title="cancel" alt="cancel"><img src="/' . TYPO3_mainDir . 'gfx/closedok.gif" width="21" height="16" class="c-inputButton" title="Cancel" alt="" /></a>';
+
 		}
-			
+
 		$this->content.=$this->doc->spacer(10);
 	}
 
@@ -407,7 +413,7 @@ class tx_dkdstaticpublish_cm1 extends t3lib_SCbase {
 		$pageTypes = array();
 		$languages = array();
 
-		$pt = &$this->tmpl->setup['types.'];
+		$pt = $this->tmpl->setup['types.'];
 		foreach( $pt as $num => $label ) {
 			if(  $num != $this->tmpl->setup['plugin.']['tx_dkdstaticpublish_pi_xmlmenu.']['type_self'] ) {
 				$pageTypes[$num] = array(
@@ -467,7 +473,7 @@ class tx_dkdstaticpublish_cm1 extends t3lib_SCbase {
 		}
 			
 		$ddName = $this->prefixId.'[scope]';
-		$content .= $this->form_dropDown( $ddName, &$scopeOptions );
+		$content .= $this->form_dropDown($ddName, $scopeOptions);
 			// preview selection
 		$content .= $this->showTree( $this->id, $this->modVars['scope'], $this->modVars['maxDepth'] );
 
@@ -573,6 +579,33 @@ class tx_dkdstaticpublish_cm1 extends t3lib_SCbase {
 		$output = '<table border="0" cellspacing="0" cellpadding="0" class="pageTree">'.$output.'</table>';
 		
 		return $output;
+	}
+	
+	
+	/**
+	 * Renders output in case of an access error
+	 * 
+	 * @return	string	HTML code with error message
+	 * @since	2010-05-25
+	 */
+	protected function _showAcessError() {
+						// access/rights error
+		$content = $this->doc->sectionHeader(
+			$GLOBALS['LANG']->getLL( 'error_header' )
+			,1
+		);
+		if( $this->id == 0 ){
+				// no publishing from the root page
+			$msg = $GLOBALS['LANG']->getLL( 'error_rootpage' );
+		} else {
+				// user has insufficient rights to publish this page
+			$msg = $GLOBALS['LANG']->getLL( 'error_access' );
+		}
+		$content .= '<p class="err">' . $msg . '</p>';
+		$content.=$this->doc->divider(5);
+		$content .= '<a href="javascript:history.back();" title="cancel" alt="cancel"><img src="/' . TYPO3_mainDir . 'gfx/closedok.gif" width="21" height="16" class="c-inputButton" title="Cancel" alt="" /></a>';
+		
+		return $content;
 	}
 
 
@@ -721,7 +754,7 @@ class tx_dkdstaticpublish_cm1 extends t3lib_SCbase {
 	 * @params	array	$attributes	the attributes of the <input>-tag
 	 * @return	string	the resulting HTML code
 	 */
-	function form_input(&$attributes) {
+	function form_input($attributes) {
 		$attribString = ' ';
 		$trailingSlash = ( substr( $this->doc->docType, 0, 5 ) == 'xhtml' ) ? ' /' : '';
 
@@ -839,7 +872,7 @@ size
 	 * @param	array	$options	array of options and their attributes for the <option>-tags
 	 * @return	string	HTML code for a dropdown box
 	 */
-	function form_select( &$attributes, &$options) {
+	function form_select($attributes, $options) {
 
 		$attribString = '';
 		$trailingSlash = ( substr( $this->doc->docType, 0, 5 ) == 'xhtml' ) ? ' /' : '';
@@ -922,7 +955,7 @@ size
 	 * @param	string	$wrap	format string for sprintf; implements the label as first argument and the <input>-tag as second argument
 	 * @return	string	HTML code for multiple checkboxes
 	 */
-	function form_checkBoxes( &$name, &$data, &$mapping, &$wrap ) {
+	function form_checkBoxes( $name, $data, $mapping, $wrap ) {
 		$boxes = array();
 		foreach( $data as $cb ) {
 			$attributes = array(
@@ -948,7 +981,7 @@ size
 	 * @param	array	$selAttributes	optional additional attributes for the <select>-tag
 	 * @return	string	HTML code for a dropdown box
 	 */
-	function form_dropDown( &$name, &$opt, $selAttributes=array() ) {
+	function form_dropDown($name, $opt, Array $selAttributes=array() ) {
 		$dd = '';
 
 			// use the additional attributes and overwrite them
