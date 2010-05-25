@@ -378,18 +378,23 @@ class ux_tx_dkdxml_impexp extends tx_dkdxml_impexp {
 	 * @param	bool	$selected (optional) flag: indicates whether a value was previously selected
 	 * @return	string	HTML code
 	 */
-	function selectBox( $param, $options, $selected=false ) {
+	function selectBox ($param, $options, $selected=false) {
 
 		$found = false;
-		$selAttrib = substr( $this->doc->docType, 0, 5) == 'xhtml' ? ' selected="selected"' : ' selected';
+		if (substr( $this->doc->docType, 0, 5) == 'xhtml') {
+			$selectedAttribute = ' selected="selected"';
+			$disabledAttribute = ' disabled="disabled"';
+		} else {
+			$selectedAttribute = ' selected';
+			$disabledAttribute = ' disabled';
+		}
 		$optTags = array();
 
-		foreach( $options as $row ) {
-//			$sel = ( $selected && ( $row['value'] == $this->vars[$param] ) ) ? ' selected="selected"' : '';
+		foreach ($options as $row) {
 			$sel = '';
-			if( $selected && !$found && $row['value'] == $this->vars[$param] ) {
+			if($selected && !$found && ($row['value'] == $this->vars[$param])) {
 				$found = true;
-				$sel = &$selAttrib;
+				$sel = $selectedAttribute;
 			}
 			$optTags[]= sprintf( '<option value="%s"%s>%s</option>', $row['value'], $sel, $row['label'] );
 		}
@@ -398,7 +403,7 @@ class ux_tx_dkdxml_impexp extends tx_dkdxml_impexp {
 			'<select name="%s[%s]"%s>',
 			$this->prefixId,
 			$param,
-			$found ? ' disabled="disabled"' : ''
+			$found ? $disabledAttribute : ''
 		);
 
 		return $selTag . implode( chr(10), $optTags ) . '</select>';
