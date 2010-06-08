@@ -12,31 +12,58 @@
     </meta>
     <data type="array">
         <languageKey index="default" type="array">
-            <label index="title">XML-Publish</label>
-            <label index="function1">Import XML Data</label>
-            <label index="function2">Export Files</label>
+            <label index="title">XML Publishing</label>
+            <label index="function1">(Import XML Data)</label>
+            <label index="function2">Write static files</label>
             <label index="function3">Publications Overview</label>
-            <label index="importXML_conf_header">The import of the HTML pages to be exported was done using the following configuration.</label>
+            <label index="importXML_conf_header">The URLs for the export of static HTML pages was done using the following configuration:</label>
             <label index="importXML_conf_hint">&lt;em&gt;Configuration:&lt;/em&gt;</label>
-            <label index="importXML_backLink">Reset configuration</label>
             <label index="importXML_buttonSelect">Select</label>
-            <label index="importXML_buttonImport">Import</label>
-            <label index="importXML_currentConfig">Current Settings for import</label>
-            <label index="importXML_pidMsg">Export from page</label>
+            <label index="importXML_currentConfig">Selected import-settings:</label>
+            <label index="importXML_pidMsg">Export starts on page</label>
             <label index="importXML_msg_noUrl">No URL defined for import.</label>
-            <label index="importPics_header">Export: File(DB) -&gt; File</label>
+            <label index="importXML_msg_success">%1$d URLs have been imported.</label>
+            <label index="importXML_hint_nextSteps">Select "%s" from the dropdown menu at the top now to save the imported URLs as static HTML files.</label>
+            <label index="importPics_header">Export: URL(DB) -&gt; File</label>
             <label index="importPics_conf_header">Select the setting you want to use for the file export</label>
-            <label index="importPics_conf_hint">&lt;em&gt;Hint:&lt;/em&gt;As the export of the HTML files may exceed the max. runtime of this script, the HTML files are exported step-by-step</label>
+            <label index="importPics_conf_hint">&lt;em&gt;Hint:&lt;/em&gt; As the export of the HTML files may exceed the max. runtime of this script, the HTML files are exported step-by-step</label>
             <label index="importPics_noPics">There is no file-export defined for the record sets in this table!</label>
-            <label index="importPics_currentSettings">Current settings for the export</label>
+            <label index="importPics_currentSettings">Current settings for the export:</label>
             <label index="importPics_url">&lt;p&gt;This is the url where the files are stored for export:&lt;br&gt;&lt;em&gt;%s&lt;/em&gt;&lt;/p&gt;</label>
-            <label index="importPics_placeholder_fieldVal">&amp;lt;DB-fieldcontent&amp;gt;</label>
+            <label index="importPics_placeholder_fieldVal">Use URL from this DB field?</label>
             <label index="importPics_pids_head">Export HTML files related to records on which page?</label>
             <label index="importPics_pids_all">all</label>
             <label index="importPics_pic_count">%u HTML files have been exported in this step.</label>
             <label index="importPics_step">Begin / continue export at record </label>
             <label index="importPics_completed_msg">Export of %2$u HTML files from %1$u records completed</label>
             <label index="pubID_dateFormat">%m/%d/%y %H:%M:%S</label>
+        </languageKey>
+        <languageKey index="de" type="array">
+            <label index="title">XML-Publishing</label>
+            <label index="function1">(XML importieren)</label>
+            <label index="function2">Statische Dateien schreiben</label>
+            <label index="function3">Publikations-Übersicht</label>
+            <label index="importXML_conf_header">Die URLs für den Export der statischen HTML-Seiten wurde mit folgender Konfiguration durchgeführt:</label>
+            <label index="importXML_conf_hint">&lt;em&gt;Konfiguration:&lt;/em&gt;</label>
+            <label index="importXML_buttonSelect">Auswählen</label>
+            <label index="importXML_currentConfig">Ausgewählte Import-Einstellungen:</label>
+            <label index="importXML_pidMsg">Ausgangsseite des Exports:</label>
+            <label index="importXML_msg_noUrl">Keine URL für den Import definiert!</label>
+            <label index="importXML_msg_success">Es wurden %1$d URLs importiert.</label>
+            <label index="importXML_hint_nextSteps">Wählen Sie jetzt "%s" vom oberen Drop-Down-Menü um die importierten URLs als statische HTML-Dateien zu speichern.</label>
+            <label index="importPics_header">Export: URL(DB) -&gt; Datei</label>
+            <label index="importPics_conf_header">Wählen Sie eine Konfiguration für den Datei-Export:</label>
+            <label index="importPics_conf_hint">&lt;em&gt;Hinweis:&lt;/em&gt; Da das Abrufen der HTML-Daten die maximale Skript-Laufzeit übersteigen kann, werden diese in mehreren Durchgängnen exportiert.</label>
+            <label index="importPics_noPics">Für die Datensätze in dieser Tabelle ist kein Datei-Export definiert!</label>
+            <label index="importPics_currentSettings">Ausgewählte Export-Einstellungen:</label>
+            <label index="importPics_url">&lt;p&gt;This is the url where the files are stored for export:&lt;br&gt;&lt;em&gt;%s&lt;/em&gt;&lt;/p&gt;</label>
+            <label index="importPics_placeholder_fieldVal">URL aus diesem DB-Feld importieren?</label>
+            <label index="importPics_pids_head">Export HTML files related to records on which page?</label>
+            <label index="importPics_pids_all">all</label>
+            <label index="importPics_pic_count">%u HTML files have been exported in this step.</label>
+            <label index="importPics_step">Begin / continue export at record </label>
+            <label index="importPics_completed_msg">Export of %2$u HTML files from %1$u records completed</label>
+            <label index="pubID_dateFormat">%d.%m.%Y %H:%M:%S</label>
         </languageKey>
     </data>
     <orig_hash type="array">
@@ -58,7 +85,6 @@
             <label index="importPics_conf_hint" type="integer">6376068</label>
             <label index="importPics_noPics" type="integer">251260488</label>
             <label index="importPics_currentSettings" type="integer">82781792</label>
-            <label index="importPics_url" type="integer">163205811</label>
             <label index="importPics_placeholder_fieldVal" type="integer">163940304</label>
             <label index="importPics_pids_head" type="integer">243996437</label>
             <label index="importPics_pids_all" type="integer">169351776</label>
