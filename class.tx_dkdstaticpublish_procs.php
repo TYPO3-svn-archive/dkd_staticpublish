@@ -45,5 +45,5 @@ class tx_dkdstaticpublish_procs {
 }
 
 if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/dkd_staticpublish/class.tx_dkdstaticpublish_procs.php'])	{
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']["ext/dkd_staticpublish/class.tx_dkdstaticpublish_procs.php']);
+	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/dkd_staticpublish/class.tx_dkdstaticpublish_procs.php']);
 }

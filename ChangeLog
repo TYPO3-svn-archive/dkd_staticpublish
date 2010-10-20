@@ -1,6 +1,10 @@
 
 Revision: $Id$
 
+2010-10-20  Thorsten Kahler  <thorsten.kahler@dkd.de>
+
+	* Fixed a typo in class.tx_dkdstaticpublish_procs.php
+
 2006-09-06  Thorsten Kahler  <thorsten.kahler@dkd.de>
 
 	* Removed unused module function from Web > Functions
